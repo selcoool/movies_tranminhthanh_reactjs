@@ -39,12 +39,19 @@ function ModalMovie({ isOpen, setIsOpen,maPhim }) {
     return (
         <>
             {isOpen ? (
-                <div id='wrapper' onClick={handleCloseModal} className='fixed z-10 top-0 left-0 flex justify-center items-center w-full h-full'>
-                      <div className='w-fit h-fit bg-slate-100'>
-                      <iframe width="560"  height="315" src="https://www.youtube.com/embed/EX6clvId19s" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
-                      </div>
-                </div>
-            ) : null}
+    <div id='wrapper' onClick={handleCloseModal} className='fixed z-10 top-0 left-0 flex justify-center items-center w-full h-full'>
+        <div className='w-fit h-fit bg-slate-100'>
+            <iframe
+                className="lg:w-[750px] w-full"
+                src={`https://www.youtube.com/embed/EX6clvId19s`}
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+            ></iframe>
+        </div>
+    </div>
+) : null}
         </>
     );
 }
