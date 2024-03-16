@@ -27,7 +27,7 @@ function ModalMovie({ isOpen, setIsOpen,maPhim }) {
         //    console.log('data.data m', data.data.content.items);
         // setTrailerMovie(currentFilm)
            console.log('currentFilm',currentFilm);
-           console.log('video',currentFilm[0].trailer);
+          //  console.log('video',currentFilm[0].trailer);
           })
           .catch((err) => {
             console.log('error', err);
@@ -42,7 +42,7 @@ function ModalMovie({ isOpen, setIsOpen,maPhim }) {
     <div id='wrapper' onClick={handleCloseModal} className='fixed z-10 top-0 left-0 flex justify-center items-center w-full h-full'>
         <div className='w-fit h-fit bg-slate-100'>
             <iframe
-                className="lg:w-[750px] w-full"
+                className="lg:w-[750px] lg:h-[400px] w-full"
                 src={`https://www.youtube.com/embed/EX6clvId19s`}
                 title="YouTube video player"
                 frameBorder="0"

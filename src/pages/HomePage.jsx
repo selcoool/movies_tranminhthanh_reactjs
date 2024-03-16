@@ -2,13 +2,18 @@ import React from 'react'
 import Header from '../components/Header'
 import Banner from '../components/Banner'
 import ListMovie from '../components/ListMovies'
+import Footer from '../components/Footer'
 
 function HomePage() {
   return (
-    <div className='w-screen h-screen flex flex-col gap-1'>
+    <div className='w-screen h-screen flex flex-col gap-y'>
+    
      <Header/>
+    
      <Banner/>
       <ListMovie/>
+   
+      <Footer/>
      
      {/* header
      banner

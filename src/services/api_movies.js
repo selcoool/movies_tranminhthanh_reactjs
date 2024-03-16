@@ -9,5 +9,9 @@ export const api_movies={
 
     getAllMovies:()=>{
         return http.get("/QuanLyPhim/LayDanhSachPhim")
+    },
+
+    getAllMoviesPagination:(curentPage,moviePerPage)=>{
+        return http.get(`/QuanLyPhim/LayDanhSachPhimPhanTrang?maNhom=GP01&soTrang=${curentPage}&soPhanTuTrenTrang=${moviePerPage}`)
     }
 }

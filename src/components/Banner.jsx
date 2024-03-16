@@ -47,7 +47,10 @@ function Banner() {
           className="w-full h-full flex items-center justify-center bg-center bg-cover duration-500"
         >
          <div className='absolute top-[50%]  text-white text-8xl' onClick={()=>setIsOpen(!isOpen)}><FaRegCirclePlay/></div>
+         
          <Modal isOpen={isOpen} setIsOpen={setIsOpen} maPhim={slides[currentIndex]?.maPhim} />
+        
+         
 
         </div>
       )}

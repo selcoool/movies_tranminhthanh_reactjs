@@ -34,8 +34,15 @@ function Modal({ isOpen, setIsOpen,maPhim }) {
         <>
             {isOpen ? (
                 <div id='wrapper' onClick={handleCloseModal} className='absolute z-10 flex justify-center items-center w-full h-full'>
-                      <div className='w-fit h-fit bg-slate-100'>
-                      <iframe  className="lg:w-[750px] w-full" src="https://www.youtube.com/embed/EX6clvId19s" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
+                      <div className='w-fit h-fit mr-4 bg-slate-100'>
+                            <iframe
+                        className="lg:w-[750px] lg:h-[400px] w-full h-full"
+                        src={`https://www.youtube.com/embed/EX6clvId19s`}
+                        title="YouTube video player"
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowFullScreen
+                            ></iframe>
                       </div>
                 </div>
             ) : null}

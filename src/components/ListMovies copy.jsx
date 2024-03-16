@@ -15,24 +15,35 @@ function ListMovie() {
   const [curentPage, setCurrentPage] = useState(1);
   const [moviePerPage, setMoviePerPage] = useState(8);
 
+  
+
+  console.log('dddddxxx',listMovies)
  
   useEffect(() => {
-    api_movies.getAllMoviesPagination(curentPage,moviePerPage)
+    api_movies.getAllMovies(curentPage,moviePerPage)
       .then((data) => {
-      
+           console.log('xxxxxxxxxxxxx',data.data.content)
         setListMovies(data.data.content);
       })
       .catch((err) => {
         console.log('error', err);
       });
-  }, [curentPage,moviePerPage]);
+  }, []);
 
+
+  const lastMovieIndex=curentPage * moviePerPage;
+  const firstMovieIndex = lastMovieIndex - moviePerPage;
+ const currentMovies= listMovies.slice(firstMovieIndex,lastMovieIndex);
+  
+
+//  console.log('lastMovieIndex',lastMovieIndex)
+//  console.log('firstPostIndex',firstMovieIndex)
+//   console.log('xxxxxxxxxxxxxxxxxxxxrrrrrrrrrrrrr',currentMovies)
 
   return (
-    <div>
     <div className='w-full h-full py-7 flex flex-col  relative'>
       <div className='grid grid-cols-1 lg:grid-cols-4 gap-4 px-20'>
-        {listMovies.items?.map((movie) => (
+        {currentMovies.map((movie) => (
           <div key={movie.maPhim} className='relative overflow-hidden cursor-pointer group'>
             <div className='w-full '>
               <img className='w-full h-80 object-cover' src={movie.hinhAnh} alt={movie.tenPhim} />
@@ -65,9 +76,8 @@ function ListMovie() {
       </div>
 
 
-     <Pagination listMovies={listMovies}  setMoviePerPage={setMoviePerPage} curentPage={curentPage} setCurrentPage={setCurrentPage}/>
+     <Pagination totalMovie={listMovies.length} moviePerPage={moviePerPage} curentPage={curentPage} setCurrentPage={setCurrentPage}/>
        
-    </div>
     </div>
   );
 }
