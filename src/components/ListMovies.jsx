@@ -23,7 +23,7 @@ function ListMovie() {
 
   return (
     <div className='w-full h-full py-7 relative'>
-      <div className='grid grid-cols-4 gap-4 px-20'>
+      <div className='grid grid-cols-1 lg:grid-cols-4 gap-4 px-20'>
         {listMovies.map((movie) => (
           <div key={movie.maPhim} className='relative cursor-pointer group'>
             <div className='w-full '>
