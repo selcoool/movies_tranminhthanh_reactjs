@@ -40,7 +40,7 @@ function Banner() {
   };
 
   return (
-    <div className="min-h-[500px] lg:min-h-[590px] w-full flex justify-center relative group">
+    <div className="min-h-[500px] lg:min-h-[590px] w-full flex justify-center relative group shadow-sm shadow-slate-500">
       {slides && (
         <div
           style={{ backgroundImage: `url('${slides[currentIndex]?.hinhAnh}')` }}

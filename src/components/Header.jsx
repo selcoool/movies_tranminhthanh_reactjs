@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { FaUserNinja } from "react-icons/fa";
+import { GiHamburgerMenu } from "react-icons/gi";
 
 function Header() {
 
@@ -18,7 +19,7 @@ console.log('dđ',openMenuNavbar)
     
   }
   return (
-   <header className="bg-white fixed top-0 right-0 z-40 w-full shadow-lg shadow-slate-600-500/50 border-t-2">
+   <header className="bg-orange-500/75 fixed top-0 right-0 z-40 w-full shadow-lg shadow-slate-600-500/50 border-t-2">
   <nav className="mx-auto flex items-center justify-between px-6 lg:px-8" aria-label="Global">
     <div className="flex lg:flex-1">
       <a href="#" className="flex items-center justify-center">
@@ -28,10 +29,10 @@ console.log('dđ',openMenuNavbar)
     </div>
   
     <div className="hidden lg:flex lg:gap-x-12">
-      <a href="#" className="text-sm font-semibold leading-6 text-gray-900">Lịch Chiếu</a>
-      <a href="#" className="text-sm font-semibold leading-6 text-gray-900">Cụm Rạp</a>
-      <a href="#" className="text-sm font-semibold leading-6 text-gray-900">Tin Tức</a>
-      <a href="#" className="text-sm font-semibold leading-6 text-gray-900">Ứng Dụng</a>
+      <a href="#" className="text-lg font-semibold leading-6 text-gray-900 hover:text-white">Lịch Chiếu</a>
+      <a href="#" className="text-lg font-semibold leading-6 text-gray-900 hover:text-white">Cụm Rạp</a>
+      <a href="#" className="text-lg font-semibold leading-6 text-gray-900 hover:text-white">Tin Tức</a>
+      <a href="#" className="text-lg font-semibold leading-6 text-gray-900 hover:text-white">Ứng Dụng</a>
     </div>
     <div className="hidden lg:flex lg:flex-1 lg:justify-end">
       <a href="#" className="flex items-center gap-3 text-sm font-semibold leading-6 text-gray-900"><FaUserNinja/>Đăng Nhập <span aria-hidden="true">→</span></a>
@@ -39,9 +40,7 @@ console.log('dđ',openMenuNavbar)
 
     <div onClick={()=>setOpenMenuNavbar(!openMenuNavbar)} className=" lg:hidden">
 
-        <svg className="h-5 w-5 flex-none" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-            <path fillRule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clipRule="evenodd" />
-        </svg>
+    <GiHamburgerMenu size={20} className='cursor-pointer'/>
     </div>
 
     

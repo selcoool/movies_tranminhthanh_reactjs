@@ -30,18 +30,53 @@ function ListMovie() {
 
   return (
     <div>
-    <div className='w-full h-full py-7 flex flex-col  relative'>
+    <div className='w-full h-full pb-7 flex flex-col  relative'>
+
+     <div className=' flex justify-center items-center my-3'>
+
+<div className='w-fit h-fit bg-red-500 px-4 shadow-md shadow-slate-400'>
+<div className='flex  gap-3 py-2'>
+      <div className='flex items-center justify-center gap-3'>
+      <label>Phim</label>
+       <input className='focus:outline-none px-2 p-1 cursor-pointer' type='text' placeholder='Nhập tên phim'/>
+      </div>
+   
+
+     <div className='flex items-center justify-center gap-3'>
+     <label>Từ</label>
+       <input className=' focus:outline-none p-1 cursor-pointer' type='date'name='tuNgay'   />
+     </div>
+
+
+     <div className='flex items-center justify-center gap-3'>
+     <label>Đến</label>
+   <input className='focus:outline-none p-1 cursor-pointer' type='date' name='denNgay'/>
+     </div>
+
+
+     <div className='flex items-center justify-center gap-3'>
+     <div className='w-20 h-[34px] bg-lime-500 flex justify-center items-center cursor-pointer hover:text-white hover:scale-105'>Tìm kiếm</div>
+     </div>
+    
+
+     </div>
+ 
+   
+     </div>
+
+     </div>
+
       <div className='grid grid-cols-1 lg:grid-cols-4 gap-4 px-20'>
         {listMovies.items?.map((movie) => (
           <div key={movie.maPhim} className='relative overflow-hidden cursor-pointer group'>
-            <div className='w-full '>
+            <div className='w-full shadow-lg shadow-slate-400 '>
               <img className='w-full h-80 object-cover' src={movie.hinhAnh} alt={movie.tenPhim} />
             </div>
             
 
             <div className='flex flex-col py-3  transition-all duration-100 group-hover:hidden'>
               <div className='pb-3 flex items-center gap-3'>
-                <span className='text-white bg-red-500 p-1 rounded'>C18</span>
+                <span className='text-white bg-red-500 p-1 rounded'>{movie.maPhim}</span>
                 <h1 className='font-bold text-sky-500'>{movie.tenPhim}</h1>
               </div>
               <div className='pb-3 flex items-center gap-3'>

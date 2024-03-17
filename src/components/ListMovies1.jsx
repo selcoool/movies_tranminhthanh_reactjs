@@ -19,16 +19,16 @@ function ListMovie() {
 
   console.log('dddddxxx',listMovies)
  
-  useEffect(() => {
-    api_movies.getAllMovies(curentPage,moviePerPage)
-      .then((data) => {
-           console.log('xxxxxxxxxxxxx',data.data.content)
-        setListMovies(data.data.content);
-      })
-      .catch((err) => {
-        console.log('error', err);
-      });
-  }, []);
+  // useEffect(() => {
+  //   api_movies.getAllMovies(curentPage,moviePerPage)
+  //     .then((data) => {
+  //          console.log('xxxxxxxxxxxxx',data.data.content)
+  //       setListMovies(data.data.content);
+  //     })
+  //     .catch((err) => {
+  //       console.log('error', err);
+  //     });
+  // }, []);
 
 
   const lastMovieIndex=curentPage * moviePerPage;
@@ -52,7 +52,7 @@ function ListMovie() {
 
             <div className='flex flex-col py-3  transition-all duration-100 group-hover:hidden'>
               <div className='pb-3 flex items-center gap-3'>
-                <span className='text-white bg-red-500 p-1 rounded'>C18</span>
+                <span className='text-white bg-red-500 p-1 rounded'>{movie.maPhim}</span>
                 <h1 className='font-bold text-sky-500'>{movie.tenPhim}</h1>
               </div>
               <div className='pb-3 flex items-center gap-3'>

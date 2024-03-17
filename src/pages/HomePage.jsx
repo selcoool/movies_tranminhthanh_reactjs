@@ -6,7 +6,7 @@ import Footer from '../components/Footer'
 
 function HomePage() {
   return (
-    <div className='w-screen h-screen flex flex-col gap-y'>
+    <div className='w-screen h-screen flex flex-col '>
     
      <Header/>
     
