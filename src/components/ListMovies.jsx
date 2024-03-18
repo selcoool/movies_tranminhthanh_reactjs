@@ -35,27 +35,27 @@ function ListMovie() {
      <div className=' flex justify-center items-center my-3'>
 
 <div className='w-fit h-fit bg-red-500 px-4 shadow-md shadow-slate-400'>
-<div className='flex  gap-3 py-2'>
+<div className='flex lg:flex-row flex-col gap-3 py-2'>
       <div className='flex items-center justify-center gap-3'>
-      <label>Phim</label>
-       <input className='focus:outline-none px-2 p-1 cursor-pointer' type='text' placeholder='Nhập tên phim'/>
+      <label className='lg:min-w-[70px] min-w-[50px] '>Phim</label>
+       <input className='lg:flex-1 flex-1 focus:outline-none px-2 p-1 cursor-pointer' type='text' placeholder='Nhập tên phim'/>
       </div>
    
 
      <div className='flex items-center justify-center gap-3'>
-     <label>Từ</label>
-       <input className=' focus:outline-none p-1 cursor-pointer' type='date'name='tuNgay'   />
+       <label className='lg:min-w-[50px] min-w-[50px]'>Từ</label>
+       <input className=' lg:flex-1 flex-1 focus:outline-none p-1 cursor-pointer' type='date'name='tuNgay'   />
      </div>
 
 
      <div className='flex items-center justify-center gap-3'>
-     <label>Đến</label>
-   <input className='focus:outline-none p-1 cursor-pointer' type='date' name='denNgay'/>
+     <label className='lg:min-w-[50px] min-w-[50px]'>Đến</label>
+   <input className='lg:flex-1  flex-1 focus:outline-none p-1 cursor-pointer' type='date' name='denNgay'/>
      </div>
 
 
      <div className='flex items-center justify-center gap-3'>
-     <div className='w-20 h-[34px] bg-lime-500 flex justify-center items-center cursor-pointer hover:text-white hover:scale-105'>Tìm kiếm</div>
+     <div className='lg:min-w-[50px] min-w-[50px] w-20 h-[34px] bg-lime-500 flex justify-center items-center hover:shadow-md hover:shadow-gray-300 cursor-pointer hover:text-white hover:scale-105 '>Tìm kiếm</div>
      </div>
     
 
