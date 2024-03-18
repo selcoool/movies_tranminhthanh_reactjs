@@ -66,7 +66,7 @@ function Footer() {
 
      </div>
 
-     <div className=' w-full h-8 text-black pb-20'>
+     <div className=' w-full h-8 text-black pb-10'>
       
       <h1 className='font-bold pl-7 '>@Copyright</h1>
 
