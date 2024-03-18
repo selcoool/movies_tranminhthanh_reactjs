@@ -29,9 +29,9 @@ function Footer() {
        </div>
 
        <div className='w-full  pl-36 pr-4 mb-5'>
-       <span className='font-bold'>Công ty:</span>Tran Minh Thanh <br/>
-       <span className='font-bold'>Địa chỉ:</span>  23/7 HCM VN<br/>
-       <span className='font-bold'>Số điện thoại:</span>  034731745
+       <span className='font-bold text-2xl'>Công ty:</span> Tran Minh Thanh <br/>
+       <span className='font-bold text-2xl'>Địa chỉ:</span>  23/7 HCM VN<br/>
+       <span className='font-bold text-2xl'>Số điện thoại:</span>  034731745
        </div>
      
     </div>
@@ -39,11 +39,11 @@ function Footer() {
   </div>
   <div className='w-full sm:w-1/4 md:w-1/3'>
     <div className='flex flex-col items-center'>
-      <h1 className='text-lg text-white font-bold py-3'>Đối Tác</h1>
+      <h1 className='text-lg lg:text-3xl text-white font-bold py-3'>Đối Tác</h1>
       <div className='grid grid-cols-3 gap-2'>
         {brands?.map((brand)=>{
           return (
-            <div><img className='w-20 h-20 hover:scale-125 cursor-pointer' src={brand.logo}/></div>
+            <div><img className='w-24 h-24 hover:scale-125 cursor-pointer' src={brand.logo}/></div>
           )
         })}
   
@@ -52,8 +52,8 @@ function Footer() {
   </div>
   <div className='w-full sm:w-1/4 md:w-1/3 '>
     <div className='flex flex-col items-center gap-3'>
-      <h1 className='text-lg text-white font-bold py-3'>Ứng Dụng</h1>
-      <div className='flex'><DiAndroid className='text-6xl hover:scale-125 cursor-pointer'/><FaAppStoreIos className='text-6xl hover:scale-125 cursor-pointer'/></div>
+      <h1 className='text-lg lg:text-3xl text-white font-bold py-3'>Ứng Dụng</h1>
+      <div className='flex'><DiAndroid className='text-7xl text-lime-400 hover:scale-125 cursor-pointer'/><FaAppStoreIos className='text-7xl text-sky-600 hover:scale-125 cursor-pointer'/></div>
     </div>
   </div>
 </div>

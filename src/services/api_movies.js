@@ -16,5 +16,8 @@ export const api_movies={
     },
     getAllTheatures:()=>{
         return http.get('/QuanLyRap/LayThongTinHeThongRap')
+    },
+    searchAllMovies:(tenPhim,tuNgay,denNgay)=>{
+        return http.get(`/QuanLyPhim/LayDanhSachPhimTheoNgay?maNhom=GP01&tenPhim=${tenPhim}&tuNgay=${tuNgay}&denNgay=${denNgay}`)
     }
 }

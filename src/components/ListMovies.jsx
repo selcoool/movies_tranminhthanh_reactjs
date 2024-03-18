@@ -3,9 +3,12 @@ import { api_movies } from '../services/api_movies';
 import { FaRegCirclePlay } from "react-icons/fa6";
 import ModalMovie from './ModalMovie';
 import Pagination from './Pagination';
-
+import ModalSearchMovie from './ModalSearchMovie';
 import moment from 'moment';
 import 'moment/locale/vi';
+
+
+
 function ListMovie() {
   const [listMovies, setListMovies] = useState([]);
   const [isOpen, setIsOpen] = useState(false);
@@ -14,51 +17,36 @@ function ListMovie() {
   const [tenPhim, setTenPhim] = useState();
   const [tuNgay, setTuNgay] = useState();
   const [denNgay, setDenNgay] = useState();
-  
+  const [dataSearch,setDataSearch]= useState();
+  const [isOpenSearchMovie, setIsOpenSearchMovie]=useState(false);
     
-  
+  console.log('data22222', dataSearch);
+  console.log('isOpenSearchMovie', isOpenSearchMovie);
   const [curentPage, setCurrentPage] = useState(1);
   const [moviePerPage, setMoviePerPage] = useState(8);
+
+
+
+
  
-  console.log('listMovies',listMovies.items)
+//   console.log('listMovies',listMovies.items)
 
-  console.log('handleMaPhim',maPhim)
-  console.log('handleTenPhim',tenPhim)
- console.log('handleTuNgay',tuNgay)
-  console.log('handleDenNgay',denNgay)
+//   console.log('handleTenPhim',tenPhim)
+//  console.log('handleTuNgay',moment(tuNgay).format('DD/MM/YYYY'))
+//   console.log('handleDenNgay', moment(denNgay).format('DD/MM/YYYY'))
 
 
-  const handleMaPhim=(e)=>{
-     setMaPhim(e.target.value)
-    console.log('handleMaPhim',e.target.value)
-    handleTimMaPhim((e.target.value).trim())
-  }
+  const handleFind=()=>{
+        api_movies.searchAllMovies(tenPhim || null,moment(tuNgay).format('DD/MM/YYYY') || null , moment(denNgay).format('DD/MM/YYYY') || null)
+      .then((data) => {
+        // console.log('data111', data.data.content);
+        setDataSearch(data.data.content);
+      })
+      .catch((err) => {
+        console.log('error', err);
+      });
 
-  function handleTimMaPhim(mph){
-    let phimTheoMa=listMovies.items.filter((movie)=>{
-      console.log('jjjjjjjjjxxxxx6666666',movie.maPhim)
-      return movie.maPhim==mph
-    })
 
-    console.log('oooooooooooooooTTTTTTTTTTTTT',phimTheoMa)
-  }
-
-  const handleTenPhim=(e)=>{
-    // return e.target
-    setTenPhim(e.target.value)
-    // console.log('handleTenPhim',e.target.value)
-  }
-
-  const handleTuNgay=(e)=>{
-    // return e.target
-    setTuNgay(e.target.value)
-    // console.log('handleTuNgay',e.target.value)
-  }
-
-  const handleDenNgay=(e)=>{
-    // return e.target
-    setDenNgay(e.target.value)
-    // console.log('handleDenNgay',e.target.value)
   }
 
  
@@ -76,39 +64,36 @@ function ListMovie() {
 
   return (
     <div>
-    <div className='w-full h-full pb-7 flex flex-col  relative'>
+    <div className='w-full h-full pb-7 flex flex-col justify-center items-center  relative'>
 
-     <div className=' flex justify-center items-center my-3'>
+     <div className=' flex flex-col justify-center items-center my-3'>
 
 <div className='w-fit h-fit bg-red-500 px-4 shadow-md shadow-slate-400'>
 <div className='flex lg:flex-row flex-col gap-3 py-2'>
 
 
-      <div className='flex items-center justify-center gap-3'>
-      <label className='lg:min-w-[70px] min-w-[60px] '>Mã Phim</label>
-       <input className='lg:flex-1 flex-1 focus:outline-none px-2 p-1 cursor-pointer' onChange={handleMaPhim} name='maPhim' type='text' placeholder='Nhập mã phim'/>
-      </div>
+     
      
       <div className='flex items-center justify-center gap-3'>
       <label className='lg:min-w-[70px] min-w-[60px] '>Phim</label>
-       <input className='lg:flex-1 flex-1 focus:outline-none px-2 p-1 cursor-pointer' onChange={handleTenPhim} name='tenPhim' type='text' placeholder='Nhập tên phim'/>
+       <input className='lg:flex-1 flex-1 focus:outline-none px-2 p-1 cursor-pointer' onChange={(e)=> setTenPhim(e.target.value)} name='tenPhim' type='text' placeholder='Nhập tên phim'/>
       </div>
    
 
      <div className='flex items-center justify-center gap-3'>
        <label className='lg:min-w-[50px] min-w-[60px]'>Từ</label>
-       <input className=' lg:flex-1 flex-1 focus:outline-none p-1 cursor-pointer' onChange={handleTuNgay} name='tuNgay' type='date'   />
+       <input className=' lg:flex-1 flex-1 focus:outline-none p-1 cursor-pointer' onChange={(e)=> setTuNgay(e.target.value)} name='tuNgay' type='date'   />
      </div>
 
 
      <div className='flex items-center justify-center gap-3'>
      <label className='lg:min-w-[50px] min-w-[60px]'>Đến</label>
-   <input className='lg:flex-1  flex-1 focus:outline-none p-1 cursor-pointer' onChange={handleDenNgay} name='denNgay' type='date' />
+   <input className='lg:flex-1  flex-1 focus:outline-none p-1 cursor-pointer' onChange={(e)=> setDenNgay(e.target.value)} name='denNgay' type='date' />
      </div>
 
 
      <div className='flex items-center justify-center gap-3'>
-     <div className='lg:min-w-[50px] min-w-[50px] w-20 h-[34px] bg-lime-500 flex justify-center items-center hover:shadow-md hover:shadow-gray-300 cursor-pointer hover:text-white hover:scale-105 '>Tìm kiếm</div>
+     <div onClick={()=>[handleFind(),setIsOpenSearchMovie(!isOpenSearchMovie)]} className='lg:min-w-[50px] min-w-[50px] w-20 h-[34px] bg-lime-500 flex justify-center items-center hover:shadow-md hover:shadow-gray-300 cursor-pointer hover:text-white hover:scale-105 '>Tìm kiếm</div>
      </div>
     
 
@@ -117,7 +102,23 @@ function ListMovie() {
    
      </div>
 
+     {/* {dataSearch.map((mv)=>{
+      return (<h1>{mv.maPhim}</h1>)
+     })} */}
+
+
+  
+
+<ModalSearchMovie isOpenSearchMovie={isOpenSearchMovie} setIsOpenSearchMovie={setIsOpenSearchMovie} dataSearch={dataSearch} />
+
+
+
+
+
      </div>
+
+
+
 
       <div className='grid grid-cols-1 lg:grid-cols-4 gap-4 px-20'>
         {listMovies.items?.map((movie) => (
