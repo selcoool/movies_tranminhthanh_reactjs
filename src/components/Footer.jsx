@@ -20,7 +20,7 @@ function Footer() {
   }, []);
 
   return (
-    <div className=' w-full flex flex-col   bg-orange-500'> 
+    <div className=' w-full flex justify-center flex-col bg-orange-500'> 
        <div className='flex flex-col sm:flex-row w-full min-h-[350px]'>
   <div className='w-full sm:w-2/4 md:w-1/3 '>
     <div className='flex flex-col'>
@@ -58,18 +58,20 @@ function Footer() {
   </div>
 </div>
 
-     <div className='flex justify-center items-center w-full  text-white mx-7'>
+{/* <div className='flex flex-col bg-gray-600 w-screen'> */}
+
+     <div className='flex justify-center items-center w-full py-7 text-white '>
       
-              <div className='w-[80%] h-1 bg-slate-500'></div>
+              <div className='w-[80%] h-1 bg-slate-500 mx-7'></div>
 
      </div>
 
-     <div className=' w-full h-8 text-black mx-7 pb-10'>
+     <div className=' w-full h-8 text-black pb-20'>
       
-      <h1 className='font-bold'>@Copyright</h1>
+      <h1 className='font-bold pl-7 '>@Copyright</h1>
 
     </div>
-
+{/* </div> */}
      
      
 

@@ -11,9 +11,55 @@ function ListMovie() {
   const [isOpen, setIsOpen] = useState(false);
   const [maPhim, setMaPhim] = useState();
 
-
+  const [tenPhim, setTenPhim] = useState();
+  const [tuNgay, setTuNgay] = useState();
+  const [denNgay, setDenNgay] = useState();
+  
+    
+  
   const [curentPage, setCurrentPage] = useState(1);
   const [moviePerPage, setMoviePerPage] = useState(8);
+ 
+  console.log('listMovies',listMovies.items)
+
+  console.log('handleMaPhim',maPhim)
+  console.log('handleTenPhim',tenPhim)
+ console.log('handleTuNgay',tuNgay)
+  console.log('handleDenNgay',denNgay)
+
+
+  const handleMaPhim=(e)=>{
+     setMaPhim(e.target.value)
+    console.log('handleMaPhim',e.target.value)
+    handleTimMaPhim((e.target.value).trim())
+  }
+
+  function handleTimMaPhim(mph){
+    let phimTheoMa=listMovies.items.filter((movie)=>{
+      console.log('jjjjjjjjjxxxxx6666666',movie.maPhim)
+      return movie.maPhim==mph
+    })
+
+    console.log('oooooooooooooooTTTTTTTTTTTTT',phimTheoMa)
+  }
+
+  const handleTenPhim=(e)=>{
+    // return e.target
+    setTenPhim(e.target.value)
+    // console.log('handleTenPhim',e.target.value)
+  }
+
+  const handleTuNgay=(e)=>{
+    // return e.target
+    setTuNgay(e.target.value)
+    // console.log('handleTuNgay',e.target.value)
+  }
+
+  const handleDenNgay=(e)=>{
+    // return e.target
+    setDenNgay(e.target.value)
+    // console.log('handleDenNgay',e.target.value)
+  }
 
  
   useEffect(() => {
@@ -36,21 +82,28 @@ function ListMovie() {
 
 <div className='w-fit h-fit bg-red-500 px-4 shadow-md shadow-slate-400'>
 <div className='flex lg:flex-row flex-col gap-3 py-2'>
+
+
       <div className='flex items-center justify-center gap-3'>
-      <label className='lg:min-w-[70px] min-w-[50px] '>Phim</label>
-       <input className='lg:flex-1 flex-1 focus:outline-none px-2 p-1 cursor-pointer' type='text' placeholder='Nhập tên phim'/>
+      <label className='lg:min-w-[70px] min-w-[60px] '>Mã Phim</label>
+       <input className='lg:flex-1 flex-1 focus:outline-none px-2 p-1 cursor-pointer' onChange={handleMaPhim} name='maPhim' type='text' placeholder='Nhập mã phim'/>
+      </div>
+     
+      <div className='flex items-center justify-center gap-3'>
+      <label className='lg:min-w-[70px] min-w-[60px] '>Phim</label>
+       <input className='lg:flex-1 flex-1 focus:outline-none px-2 p-1 cursor-pointer' onChange={handleTenPhim} name='tenPhim' type='text' placeholder='Nhập tên phim'/>
       </div>
    
 
      <div className='flex items-center justify-center gap-3'>
-       <label className='lg:min-w-[50px] min-w-[50px]'>Từ</label>
-       <input className=' lg:flex-1 flex-1 focus:outline-none p-1 cursor-pointer' type='date'name='tuNgay'   />
+       <label className='lg:min-w-[50px] min-w-[60px]'>Từ</label>
+       <input className=' lg:flex-1 flex-1 focus:outline-none p-1 cursor-pointer' onChange={handleTuNgay} name='tuNgay' type='date'   />
      </div>
 
 
      <div className='flex items-center justify-center gap-3'>
-     <label className='lg:min-w-[50px] min-w-[50px]'>Đến</label>
-   <input className='lg:flex-1  flex-1 focus:outline-none p-1 cursor-pointer' type='date' name='denNgay'/>
+     <label className='lg:min-w-[50px] min-w-[60px]'>Đến</label>
+   <input className='lg:flex-1  flex-1 focus:outline-none p-1 cursor-pointer' onChange={handleDenNgay} name='denNgay' type='date' />
      </div>
 
 
