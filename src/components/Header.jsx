@@ -5,8 +5,6 @@ import { GiHamburgerMenu } from "react-icons/gi";
 function Header() {
 
  const [openMenuNavbar,setOpenMenuNavbar]=useState(false)
-console.log('dđ',openMenuNavbar)
-
  const handleCloseMenuNavbar =(e)=>{
     if(e.target.id=="wrapper")
    {

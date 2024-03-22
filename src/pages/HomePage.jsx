@@ -3,6 +3,7 @@ import Header from '../components/Header'
 import Banner from '../components/Banner'
 import ListMovie from '../components/ListMovies'
 import Footer from '../components/Footer'
+import BrandTheatre from '../components/BrandTheatre'
 
 function HomePage() {
   return (
@@ -12,6 +13,8 @@ function HomePage() {
     
      <Banner/>
       <ListMovie/>
+
+      <BrandTheatre/>
    
       <Footer/>
      

@@ -7,7 +7,7 @@ import { MdComputer } from "react-icons/md";
 function Footer() {
 
   const [brands,setBrands]=useState()
-  console.log('brands', brands);
+  // console.log('brands', brands);
   useEffect(() => {
     api_movies.getAllTheatures()
       .then((data) => {
@@ -41,9 +41,9 @@ function Footer() {
     <div className='flex flex-col items-center'>
       <h1 className='text-lg lg:text-3xl text-white font-bold py-3'>Đối Tác</h1>
       <div className='grid grid-cols-3 gap-2'>
-        {brands?.map((brand)=>{
+        {brands?.map((brand, index)=>{
           return (
-            <div><img className='w-24 h-24 hover:scale-125 cursor-pointer' src={brand.logo}/></div>
+            <div key={index}><img className='w-24 h-24 hover:scale-125 cursor-pointer' src={brand.logo}/></div>
           )
         })}
   

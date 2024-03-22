@@ -18,6 +18,14 @@ export const api_movies={
         return http.get('/QuanLyRap/LayThongTinHeThongRap')
     },
     searchAllMovies:(tenPhim,tuNgay,denNgay)=>{
-        return http.get(`/QuanLyPhim/LayDanhSachPhimTheoNgay?maNhom=GP01&tenPhim=${tenPhim}&tuNgay=${tuNgay}&denNgay=${denNgay}`)
+       
+            return http.get(`/QuanLyPhim/LayDanhSachPhimTheoNgay?maNhom=GP01&tenPhim=${tenPhim}&tuNgay=${tuNgay}&denNgay=${denNgay}`)
+   
+       
+    },
+    getAllMoviesInTheatre:(maHeThongRap)=>{
+        return http.get(`/QuanLyRap/LayThongTinLichChieuHeThongRap?maHeThongRap=${maHeThongRap}&maNhom=GP01`)
+
+   
     }
 }

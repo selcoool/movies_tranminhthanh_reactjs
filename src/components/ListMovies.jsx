@@ -20,8 +20,7 @@ function ListMovie() {
   const [dataSearch,setDataSearch]= useState();
   const [isOpenSearchMovie, setIsOpenSearchMovie]=useState(false);
     
-  console.log('data22222', dataSearch);
-  console.log('isOpenSearchMovie', isOpenSearchMovie);
+ 
   const [curentPage, setCurrentPage] = useState(1);
   const [moviePerPage, setMoviePerPage] = useState(8);
 

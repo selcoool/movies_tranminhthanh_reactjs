@@ -17,7 +17,7 @@ function ListMovie() {
 
   
 
-  console.log('dddddxxx',listMovies)
+  // console.log('dddddxxx',listMovies)
  
   // useEffect(() => {
   //   api_movies.getAllMovies(curentPage,moviePerPage)
