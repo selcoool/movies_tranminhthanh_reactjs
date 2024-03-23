@@ -40,7 +40,7 @@ function ModalSignIn({ isOpen, setIsOpen}) {
 
                     <div className='w-fit h-fit bg-orange-500 px-4 shadow-md shadow-slate-400 rounded-lg'>
                             <div className='flex h items-center justify-center gap-3 relative'>
-                               <div className='absolute font-bold text-white right-0 top-1' onClick={()=>setIsOpen(!isOpen)}>X</div>
+                               <div className='absolute font-bold text-white right-0 top-1 cursor-pointer' onClick={()=>setIsOpen(!isOpen)}>X</div>
                             </div>
                             
                            <div className='flex flex-col gap-3 pb-3 pt-12'>

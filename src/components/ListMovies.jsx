@@ -67,7 +67,7 @@ function ListMovie() {
 
      <div className=' flex flex-col justify-center items-center my-3'>
 
-<div className='w-fit h-fit bg-orange-500 px-4 shadow-md shadow-slate-400 rounded-lg'>
+<div className='w-fit h-fit bg-red-300 px-4 shadow-md shadow-slate-400 rounded-lg'>
 <div className='flex lg:flex-row flex-col gap-3 py-2'>
 
 
@@ -91,7 +91,7 @@ function ListMovie() {
      </div>
 
 
-     <div className='flex items-center justify-center gap-3'>
+     <div className='flex items-center justify-end gap-3'>
      <div onClick={()=>[handleFind(),setIsOpenSearchMovie(!isOpenSearchMovie)]} className='lg:min-w-[50px] min-w-[50px] w-20 h-[34px] bg-lime-500 flex justify-center items-center hover:shadow-md hover:shadow-gray-300 cursor-pointer hover:text-white hover:scale-105 '>Tìm kiếm</div>
      </div>
     
