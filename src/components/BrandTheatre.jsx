@@ -122,7 +122,7 @@ function BrandTheatre() {
                 </div>
               ))
             ) : (
-              <div className='flex justify-center items-center h-full px-8 text-white'>Vui lòng chọn địa điểm cần xem phim</div>
+              <div className='flex justify-center items-center h-full px-8 text-white'>Vui lòng chọn chọn rạp</div>
             )}
           </div>
         </div>
