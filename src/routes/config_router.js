@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route, useRoutes } from "react-router-dom";
 import Header from '../components/Header';
 import Error from '../components/Error';
 import HomePage from '../pages/HomePage';
+import Management from '../pages/ManagementHome';
 
 function useRouteCustom() {
 
@@ -10,6 +11,10 @@ function useRouteCustom() {
       {
         path:"/",
         element:<HomePage/>,
+      },
+      {
+        path:"/management",
+        element:<Management/>,
       },
       // {
       // path:"/detail",
