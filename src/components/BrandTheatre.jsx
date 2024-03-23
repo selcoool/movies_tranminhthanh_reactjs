@@ -110,10 +110,10 @@ function BrandTheatre() {
                   <div className='flex flex-col gap-2'>
                     {relatedBrandMovie.lstLichChieuTheoPhim.map((lichChieuTheoPhim, indexLichChieuTheoPhim) => (
                       <div key={indexLichChieuTheoPhim} className='flex justify-center gap-2'>
-                        <div className='text-white bg-orange-800 p-1 px-2  rounded-lg'>{lichChieuTheoPhim.tenRap}</div>
+                        {/* <div className='text-white bg-orange-800 p-1 px-2  rounded-lg'>{lichChieuTheoPhim.tenRap}</div> */}
                         <div className='text-white bg-orange-800 p-1 px-2 rounded-lg'>{lichChieuTheoPhim.giaVe}</div>
                         <div className='text-white bg-orange-800 p-1 px-2 rounded-lg'>{moment(lichChieuTheoPhim.ngayChieuGioChieu).format('HH:MM:SS')}-{moment(lichChieuTheoPhim.ngayChieuGioChieu).format('DD/MM/YYYY')}</div>
-                        <div className='text-white bg-green-500 p-1  px-2 rounded-lg hover:bg-green-700 cursor-pointer'>Đặt Vé</div>
+                        {/* <div className='text-white bg-green-500 p-1  px-2 rounded-lg hover:bg-green-700 cursor-pointer'>Đặt Vé</div> */}
                       </div>
                     ))}
                   </div>
