@@ -14,8 +14,8 @@ function BrandTheatre() {
 
   const toggleTab = (index) => {
     setToggleStateBrand(index);
-
-   
+    setToggleStateCumRap(null)
+ 
   };
 
   const toggleAddress = (index) => {
@@ -50,7 +50,7 @@ function BrandTheatre() {
   }, []);
 
   return (
-    <div className='flex justify-center items-center p-5'>
+    <div className='flex justify-center items-center p-5 mx-4'>
     <div className='w-fit h-fit'>
       {/* <div className='w-full h-full  flex flex-wrap flex-col justify-center items-center bg-slate-500'> */}
         <div className='flex flex-col lg:flex-row  lg:max-h-[500px] h-fit gap-1 shadow-lg shadow-slate-400'>
@@ -99,7 +99,7 @@ function BrandTheatre() {
               ))}
             </div>
           </div>
-          <div className='panels w-full flex flex-col  bg-orange-400 max-w-[500px] max-h-[400px] overflow-y-auto no-scrollbar'>
+          <div className='panels w-full flex flex-col  bg-orange-400 max-w-[500px] max-h-[300px] lg:max-h-[500px] overflow-y-auto no-scrollbar'>
           <h1 className='text-center font-bold text-red-800  text-xl pt-2'>Danh sách phim và thời gian chiếu:</h1>
             {relatedBrandMovies?.length >= 1 ? (
               
