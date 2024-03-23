@@ -36,14 +36,14 @@ function Header() {
     </div>
   
     <div className="hidden lg:flex lg:gap-x-12">
-      <a href="#" className="text-lg font-semibold leading-6 text-gray-900 hover:text-white hover:scale-125">Lịch Chiếu</a>
-      <a href="#" className="text-lg font-semibold leading-6 text-gray-900 hover:text-white hover:scale-125">Cụm Rạp</a>
+      <a href="#lich_chieu" className="text-lg font-semibold leading-6 text-gray-900 hover:text-white hover:scale-125">Lịch Chiếu</a>
+      <a href="#cum_rap" className="text-lg font-semibold leading-6 text-gray-900 hover:text-white hover:scale-125">Cụm Rạp</a>
       <a href="#" className="text-lg font-semibold leading-6 text-gray-900 hover:text-white hover:scale-125">Tin Tức</a>
-      <a href="#" className="text-lg font-semibold leading-6 text-gray-900 hover:text-white hover:scale-125">Ứng Dụng</a>
+      <a href="#ung_dung" className="text-lg font-semibold leading-6 text-gray-900 hover:text-white hover:scale-125">Ứng Dụng</a>
     </div>
     <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-      <a href="#" className="flex items-center gap-3 text-sm font-semibold leading-6 text-gray-900 transition-all duration-100 hover:text-white hover:scale-125" onClick={()=>[setOpenMenuSignIn(!openMenuSignIn),setOpenMenuSignUp(false)]} ><FaUserNinja/>Đăng Nhập <span aria-hidden="true"></span></a>
-      <a href="#" className="flex items-center gap-3 text-sm font-semibold leading-6 text-gray-900 transition-all duration-100 hover:text-white hover:scale-125" onClick={()=>[setOpenMenuSignUp(!openMenuSignUp),setOpenMenuSignIn(false)]}><GiArchiveRegister/>Đăng Ký <span aria-hidden="true"></span></a>
+      <div className="flex items-center gap-3 text-sm font-semibold leading-6 text-gray-900 transition-all duration-100 hover:text-white hover:scale-125 cursor-pointer" onClick={()=>[setOpenMenuSignIn(!openMenuSignIn),setOpenMenuSignUp(false)]} ><FaUserNinja/>Đăng Nhập <span aria-hidden="true"></span></div>
+      <div className="flex items-center gap-3 text-sm font-semibold leading-6 text-gray-900 transition-all duration-100 hover:text-white hover:scale-125 cursor-pointer" onClick={()=>[setOpenMenuSignUp(!openMenuSignUp),setOpenMenuSignIn(false)]}><GiArchiveRegister/>Đăng Ký <span aria-hidden="true"></span></div>
       {/* <a href="#" className="flex items-center gap-3 text-sm font-semibold leading-6 text-gray-900 transition-all duration-100 hover:text-white hover:scale-125"><FaUserNinja/>Đăng Xuất <span aria-hidden="true"></span></a> */}
    
     </div>

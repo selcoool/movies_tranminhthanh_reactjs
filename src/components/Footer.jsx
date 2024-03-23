@@ -20,7 +20,7 @@ function Footer() {
   }, []);
 
   return (
-    <div className=' w-full flex justify-center flex-col bg-orange-500'> 
+    <div id="ung_dung" className=' w-full flex justify-center flex-col bg-orange-500'> 
        <div className='flex flex-col sm:flex-row w-full min-h-[350px]'>
   <div className='w-full sm:w-2/4 md:w-1/3 '>
     <div className='flex flex-col'>

@@ -37,9 +37,9 @@ function ModalSignUp({ isOpen, setIsOpen}) {
                 <div className='w-fit h-fit '>
                  
 
-                    <div className='w-fit h-fit bg-orange-500 px-4 shadow-md shadow-slate-400 rounded-lg'>
+                    <div className='w-fit h-fit bg-red-500 px-4 shadow-md shadow-slate-400 rounded-lg'>
                             <div className='flex  items-center justify-center gap-3 relative'>
-                               <div className='absolute font-bold text-white right-0 top-1 cursor-pointer' onClick={()=>setIsOpen(!isOpen)}>X</div>
+                               <div className='absolute font-bold text-white right-0 top-1 hover:text-black cursor-pointer' onClick={()=>setIsOpen(!isOpen)}>X</div>
                             </div>
                             
                            <div className='flex flex-col gap-3 pb-3 pt-12'>
@@ -62,7 +62,7 @@ function ModalSignUp({ isOpen, setIsOpen}) {
 
 
                             <div className='flex items-center justify-end gap-3'>
-                                <div className=' min-w-[60px] w-20 h-[34px] bg-red-600 flex justify-center items-center hover:shadow-md hover:shadow-gray-300 cursor-pointer hover:text-white hover:scale-105 '>Đăng ký</div>
+                                <div className=' min-w-[60px] w-20 h-[34px] bg-sky-400 flex justify-center items-center hover:shadow-md hover:shadow-gray-300 cursor-pointer hover:text-white hover:scale-105 '>Đăng ký</div>
                             </div>
 
 

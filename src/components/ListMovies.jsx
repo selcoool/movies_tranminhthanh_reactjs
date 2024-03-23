@@ -62,8 +62,8 @@ function ListMovie() {
 
 
   return (
-    <div>
-    <div className='w-full h-full  flex flex-col justify-center items-center  relative'>
+    <div id='lich_chieu'>
+    <div className=' w-full h-full  flex flex-col justify-center items-center  relative'>
 
      <div className=' flex flex-col justify-center items-center my-3'>
 
