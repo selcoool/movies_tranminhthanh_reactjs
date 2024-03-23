@@ -66,7 +66,7 @@ function BrandTheatre() {
                   findMoviesInTheatre(brand.maHeThongRap);
                 }}
               >
-                <div className='h-20 w-20'>
+                <div className='h-12 w-12 lg:h-20 lg:w-20'>
                   <img className='w-full h-full p-2' src={brand.logo} alt={brand.maHeThongRap} />
                 </div>
                 {toggleStateBrand === indexBrand && (
@@ -75,7 +75,7 @@ function BrandTheatre() {
               </div>
             ))}
           </div>
-          <div className='panels-wrapper w-full relative flex flex-col max-h-[300px]  lg:max-h-[600px]'>
+          <div className='panels-wrapper w-full relative flex flex-col max-w-[500px] max-h-[300px]  lg:max-h-[600px]'>
             
             <div className='panels bg-orange-400 overflow-y-auto no-scrollbar'>
             <h1 className='text-center font-bold text-xl pt-2'>Địa chỉ:</h1>
@@ -99,12 +99,12 @@ function BrandTheatre() {
               ))}
             </div>
           </div>
-          <div className='panels w-full flex flex-col px-4 bg-orange-400 min-w-[500px] max-h-[600px] overflow-y-auto no-scrollbar'>
+          <div className='panels w-full flex flex-col  bg-orange-400 max-w-[500px] max-h-[400px] overflow-y-auto no-scrollbar'>
           <h1 className='text-center font-bold text-red-800  text-xl pt-2'>Danh sách phim và thời gian chiếu:</h1>
             {relatedBrandMovies?.length >= 1 ? (
               
               relatedBrandMovies.map((relatedBrandMovie, indexRelatedBrandMovie) => (
-                <div key={indexRelatedBrandMovie} className='flex flex-col justify-center items-center gap-2 pt-4 bg-orange-400'>
+                <div key={indexRelatedBrandMovie} className='flex flex-col justify-center items-center gap-2 p-4 bg-orange-400'>
                   <div><img className='h-40 w-40 object-cover' src={relatedBrandMovie.hinhAnh} alt='' /></div>
                   <div className='font-bold'>{relatedBrandMovie.tenPhim}</div>
                   <div className='flex flex-col gap-2'>
