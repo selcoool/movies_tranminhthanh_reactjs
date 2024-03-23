@@ -14,14 +14,16 @@ function BrandTheatre() {
 
   const toggleTab = (index) => {
     setToggleStateBrand(index);
-    setToggleStateCumRap(null);
+
+   
   };
 
   const toggleAddress = (index) => {
     setToggleStateCumRap(index);
+
   };
 
-  console.log('vvvvvvv', toggleStateCumRap);
+  // console.log('vvvvvvv', toggleStateCumRap);
 
   const findMoviesInTheatre = (maHeThongRap) => {
     api_movies
@@ -48,9 +50,10 @@ function BrandTheatre() {
   }, []);
 
   return (
-    <div className='w-full h-full'>
-      <div className='w-full h-full py-7 flex flex-wrap flex-col justify-center items-center bg-slate-500 relative'>
-        <div className='flex flex-col lg:flex-row lg:max-h-[500px] h-fit'>
+    <div className='flex justify-center items-center p-5'>
+    <div className='w-fit h-fit'>
+      {/* <div className='w-full h-full  flex flex-wrap flex-col justify-center items-center bg-slate-500'> */}
+        <div className='flex flex-col lg:flex-row  lg:max-h-[500px] h-fit gap-1 shadow-lg shadow-slate-400'>
           <div className='tabs flex flex-row lg:flex-col justify-center items-center gap-1'>
             {brands?.map((brand, indexBrand) => (
               <div
@@ -72,17 +75,19 @@ function BrandTheatre() {
               </div>
             ))}
           </div>
-          <div className='panels-wrapper relative flex flex-col max-h-[600px]'>
+          <div className='panels-wrapper w-full relative flex flex-col max-h-[300px]  lg:max-h-[600px]'>
+            
             <div className='panels bg-orange-400 overflow-y-auto no-scrollbar'>
+            <h1 className='text-center font-bold text-xl pt-2'>Địa chỉ:</h1>
               {brandMovies?.map((brandMovie, indexMovie) => (
                 <div key={indexMovie} className='flex flex-col h-full  min-h-[600px] bg-orange-400/70'>
                   <div className='flex justify-center py-4 items-center'>
                     <img className='h-20 w-20' src={brandMovie.logo} alt='' />
                   </div>
-
-                  {console.log('pppppppp',brandMovie)}
+{/* 
+                  {console.log('pppppppp',brandMovie)} */}
                   {brandMovie.lstCumRap?.map((cumRap, indexCumRap) => (
-                    <div key={indexCumRap} className='p-4 cursor-pointer hover:bg-slate-200 relative' onClick={() => [setRelatedBrandMovies(cumRap.danhSachPhim), setToggleStateCumRap(indexCumRap)]}>
+                    <div key={indexCumRap} className={`p-4 cursor-pointer ${toggleStateCumRap === indexCumRap ? 'bg-slate-200': ''} hover:bg-slate-300 relative`} onClick={() => [setRelatedBrandMovies(cumRap.danhSachPhim), setToggleStateCumRap(indexCumRap)]}>
                       <div className='font-bold'>{cumRap.tenCumRap}</div>
                       <div>{cumRap.diaChi}</div>
                       {toggleStateCumRap === indexCumRap && (
@@ -94,19 +99,21 @@ function BrandTheatre() {
               ))}
             </div>
           </div>
-          <div className='panels flex flex-col px-4 bg-orange-400 overflow-y-auto no-scrollbar'>
+          <div className='panels w-full flex flex-col px-4 bg-orange-400 min-w-[500px] max-h-[600px] overflow-y-auto no-scrollbar'>
+          <h1 className='text-center font-bold text-red-800  text-xl pt-2'>Danh sách phim và thời gian chiếu:</h1>
             {relatedBrandMovies?.length >= 1 ? (
+              
               relatedBrandMovies.map((relatedBrandMovie, indexRelatedBrandMovie) => (
                 <div key={indexRelatedBrandMovie} className='flex flex-col justify-center items-center gap-2 pt-4 bg-orange-400'>
-                  <div><img className='h-20 w-20' src={relatedBrandMovie.hinhAnh} alt='' /></div>
+                  <div><img className='h-40 w-40 object-cover' src={relatedBrandMovie.hinhAnh} alt='' /></div>
                   <div className='font-bold'>{relatedBrandMovie.tenPhim}</div>
                   <div className='flex flex-col gap-2'>
                     {relatedBrandMovie.lstLichChieuTheoPhim.map((lichChieuTheoPhim, indexLichChieuTheoPhim) => (
                       <div key={indexLichChieuTheoPhim} className='flex justify-center gap-2'>
-                        <div className='text-white bg-orange-800 p-1 rounded-lg'>{lichChieuTheoPhim.tenRap}</div>
-                        <div className='text-white bg-orange-800 p-1 rounded-lg'>{lichChieuTheoPhim.giaVe}</div>
-                        <div className='text-white bg-orange-800 p-1 rounded-lg'>{moment(lichChieuTheoPhim.ngayChieuGioChieu).format('HH:MM:SS')}-{moment(lichChieuTheoPhim.ngayChieuGioChieu).format('DD/MM/YYYY')}</div>
-                        <div className='text-white bg-green-500 p-1 rounded-lg hover:bg-green-700 cursor-pointer'>Đặt Vé</div>
+                        <div className='text-white bg-orange-800 p-1 px-2  rounded-lg'>{lichChieuTheoPhim.tenRap}</div>
+                        <div className='text-white bg-orange-800 p-1 px-2 rounded-lg'>{lichChieuTheoPhim.giaVe}</div>
+                        <div className='text-white bg-orange-800 p-1 px-2 rounded-lg'>{moment(lichChieuTheoPhim.ngayChieuGioChieu).format('HH:MM:SS')}-{moment(lichChieuTheoPhim.ngayChieuGioChieu).format('DD/MM/YYYY')}</div>
+                        <div className='text-white bg-green-500 p-1  px-2 rounded-lg hover:bg-green-700 cursor-pointer'>Đặt Vé</div>
                       </div>
                     ))}
                   </div>
@@ -117,7 +124,8 @@ function BrandTheatre() {
             )}
           </div>
         </div>
-      </div>
+      {/* </div> */}
+    </div>
     </div>
   );
 }

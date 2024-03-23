@@ -63,11 +63,11 @@ function ListMovie() {
 
   return (
     <div>
-    <div className='w-full h-full pb-7 flex flex-col justify-center items-center  relative'>
+    <div className='w-full h-full  flex flex-col justify-center items-center  relative'>
 
      <div className=' flex flex-col justify-center items-center my-3'>
 
-<div className='w-fit h-fit bg-red-500 px-4 shadow-md shadow-slate-400'>
+<div className='w-fit h-fit bg-orange-500 px-4 shadow-md shadow-slate-400 rounded-lg'>
 <div className='flex lg:flex-row flex-col gap-3 py-2'>
 
 
@@ -101,9 +101,6 @@ function ListMovie() {
    
      </div>
 
-     {/* {dataSearch.map((mv)=>{
-      return (<h1>{mv.maPhim}</h1>)
-     })} */}
 
 
   

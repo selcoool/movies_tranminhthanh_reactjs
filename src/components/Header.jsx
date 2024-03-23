@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { FaUserNinja } from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { GiArchiveRegister } from "react-icons/gi";
 
 function Header() {
 
@@ -17,7 +18,7 @@ function Header() {
     
   }
   return (
-   <header className="bg-orange-500/75 fixed top-0 right-0 z-40 w-full shadow-lg shadow-slate-600-500/50 border-t-2">
+   <header className="bg-orange-500/85 fixed top-0 right-0 z-40 w-full shadow-lg shadow-slate-600-500/50 border-t-2">
   <nav className="mx-auto flex items-center justify-between px-6 lg:px-8" aria-label="Global">
     <div className="flex lg:flex-1">
       <a href="#" className="flex items-center justify-center">
@@ -27,14 +28,18 @@ function Header() {
     </div>
   
     <div className="hidden lg:flex lg:gap-x-12">
-      <a href="#" className="text-lg font-semibold leading-6 text-gray-900 hover:text-white">Lịch Chiếu</a>
-      <a href="#" className="text-lg font-semibold leading-6 text-gray-900 hover:text-white">Cụm Rạp</a>
-      <a href="#" className="text-lg font-semibold leading-6 text-gray-900 hover:text-white">Tin Tức</a>
-      <a href="#" className="text-lg font-semibold leading-6 text-gray-900 hover:text-white">Ứng Dụng</a>
+      <a href="#" className="text-lg font-semibold leading-6 text-gray-900 hover:text-white hover:scale-125">Lịch Chiếu</a>
+      <a href="#" className="text-lg font-semibold leading-6 text-gray-900 hover:text-white hover:scale-125">Cụm Rạp</a>
+      <a href="#" className="text-lg font-semibold leading-6 text-gray-900 hover:text-white hover:scale-125">Tin Tức</a>
+      <a href="#" className="text-lg font-semibold leading-6 text-gray-900 hover:text-white hover:scale-125">Ứng Dụng</a>
     </div>
     <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-      <a href="#" className="flex items-center gap-3 text-sm font-semibold leading-6 text-gray-900"><FaUserNinja/>Đăng Nhập <span aria-hidden="true">→</span></a>
+      <a href="#" className="flex items-center gap-3 text-sm font-semibold leading-6 text-gray-900 transition-all duration-100 hover:text-white hover:scale-125"><FaUserNinja/>Đăng Nhập <span aria-hidden="true"></span></a>
+      <a href="#" className="flex items-center gap-3 text-sm font-semibold leading-6 text-gray-900 transition-all duration-100 hover:text-white hover:scale-125"><GiArchiveRegister/>Đăng Ký <span aria-hidden="true"></span></a>
+      {/* <a href="#" className="flex items-center gap-3 text-sm font-semibold leading-6 text-gray-900 transition-all duration-100 hover:text-white hover:scale-125"><FaUserNinja/>Đăng Xuất <span aria-hidden="true"></span></a> */}
+   
     </div>
+  
 
     <div onClick={()=>setOpenMenuNavbar(!openMenuNavbar)} className=" lg:hidden">
 
@@ -49,7 +54,7 @@ function Header() {
   <div id='wrapper' onClick={handleCloseMenuNavbar} className={`bg-neutral-600/70  z-20 fixed top-0 right-0 w-screen h-screen ${openMenuNavbar ? 'lg:hidden' : 'hidden'}   `}>
   <div className='bg-orange-500'>
     {/* Background backdrop, show/hide based on slide-over state. */}
-    <div className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+    <div className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-orange-400 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
       <div className="flex items-center justify-between">
         <a href="#" className="-m-1.5 p-1.5">
           <span className="sr-only">Your Company</span>
@@ -71,6 +76,8 @@ function Header() {
           </div>
           <div className="py-6">
             <a href="#" className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Đăng Nhập</a>
+            <a href="#" className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Đăng Ký</a>
+            <a href="#" className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Đăng Xuất</a>
           </div>
         </div>
       </div>
