@@ -44,19 +44,19 @@ function ModalSignUp({ isOpen, setIsOpen}) {
                             
                            <div className='flex flex-col gap-3 pb-3 pt-12'>
                             <div className='flex items-center justify-center gap-3'>
-                                <label className='min-w-[140px] '>Tên:</label>
+                                <label className='min-w-[132px] '>Tên:</label>
                                 <input type='text' className=' flex-1 focus:outline-none px-2 p-1 rounded-lg cursor-pointer' placeholder='Nhập tên người dùng' />
                             </div>
 
 
                             <div className='flex items-center justify-center gap-3'>
-                                <label className=' min-w-[140px]'>Mật khẩu:</label>
+                                <label className=' min-w-[132px]'>Mật khẩu:</label>
                                 <input type='text' className=' flex-1 focus:outline-none p-1  rounded-lg cursor-pointer' placeholder='Nhập mập khẩu' />
                             </div>
 
 
                             <div className='flex items-center justify-center gap-3'>
-                                <label className=' min-w-[140px]'>Xác nhận mật khẩu</label>
+                                <label className=' min-w-[132px]'>Xác nhận mật khẩu</label>
                                 <input type='text' className=' flex-1 focus:outline-none p-1  rounded-lg cursor-pointer'   placeholder='Nhập mập khẩu'/>
                             </div>
 
