@@ -35,7 +35,7 @@ function ModalSignIn({ isOpen, setIsOpen}) {
              {isOpen ? (
 
             <div id='wrapper' onClick={handleCloseModal} className='fixed z-10 flex justify-center items-center w-full h-full'>
-                <div className='w-fit h-fit mr-4'>
+                <div className='w-fit h-fit '>
                  
 
                     <div className='w-fit h-fit bg-orange-500 px-4 shadow-md shadow-slate-400 rounded-lg'>
