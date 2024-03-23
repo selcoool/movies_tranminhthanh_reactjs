@@ -2,10 +2,17 @@ import React, { useState } from 'react'
 import { FaUserNinja } from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { GiArchiveRegister } from "react-icons/gi";
+import ModalSignUp from './ModalSignUp';
+import ModalSignIn from './ModalSignIn';
 
 function Header() {
 
  const [openMenuNavbar,setOpenMenuNavbar]=useState(false)
+
+ const [openMenuSignUp,setOpenMenuSignUp]=useState(false)
+ const [openMenuSignIn,setOpenMenuSignIn]=useState(false)
+
+
  const handleCloseMenuNavbar =(e)=>{
     if(e.target.id=="wrapper")
    {
@@ -18,6 +25,7 @@ function Header() {
     
   }
   return (
+    <>
    <header className="bg-orange-500/85 fixed top-0 right-0 z-40 w-full shadow-lg shadow-slate-600-500/50 border-t-2">
   <nav className="mx-auto flex items-center justify-between px-6 lg:px-8" aria-label="Global">
     <div className="flex lg:flex-1">
@@ -34,8 +42,8 @@ function Header() {
       <a href="#" className="text-lg font-semibold leading-6 text-gray-900 hover:text-white hover:scale-125">Ứng Dụng</a>
     </div>
     <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-      <a href="#" className="flex items-center gap-3 text-sm font-semibold leading-6 text-gray-900 transition-all duration-100 hover:text-white hover:scale-125"><FaUserNinja/>Đăng Nhập <span aria-hidden="true"></span></a>
-      <a href="#" className="flex items-center gap-3 text-sm font-semibold leading-6 text-gray-900 transition-all duration-100 hover:text-white hover:scale-125"><GiArchiveRegister/>Đăng Ký <span aria-hidden="true"></span></a>
+      <a href="#" className="flex items-center gap-3 text-sm font-semibold leading-6 text-gray-900 transition-all duration-100 hover:text-white hover:scale-125" onClick={()=>[setOpenMenuSignIn(!openMenuSignIn),setOpenMenuSignUp(false)]} ><FaUserNinja/>Đăng Nhập <span aria-hidden="true"></span></a>
+      <a href="#" className="flex items-center gap-3 text-sm font-semibold leading-6 text-gray-900 transition-all duration-100 hover:text-white hover:scale-125" onClick={()=>[setOpenMenuSignUp(!openMenuSignUp),setOpenMenuSignIn(false)]}><GiArchiveRegister/>Đăng Ký <span aria-hidden="true"></span></a>
       {/* <a href="#" className="flex items-center gap-3 text-sm font-semibold leading-6 text-gray-900 transition-all duration-100 hover:text-white hover:scale-125"><FaUserNinja/>Đăng Xuất <span aria-hidden="true"></span></a> */}
    
     </div>
@@ -75,8 +83,8 @@ function Header() {
             <a href="#" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Ứng Dụng</a>
           </div>
           <div className="py-6">
-            <a href="#" className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Đăng Nhập</a>
-            <a href="#" className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Đăng Ký</a>
+            <a href="#" className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50" onClick={()=>[setOpenMenuSignIn(!openMenuSignUp),setOpenMenuSignUp(false),setOpenMenuNavbar(false)]}>Đăng Nhập</a>
+            <a href="#" className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50" onClick={()=>[setOpenMenuSignUp(!openMenuSignUp),setOpenMenuSignIn(false),setOpenMenuNavbar(false)]}>Đăng Ký</a>
             <a href="#" className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Đăng Xuất</a>
           </div>
         </div>
@@ -86,6 +94,10 @@ function Header() {
  </div>
 </header>
 
+<ModalSignUp  isOpen={openMenuSignUp} setIsOpen={setOpenMenuSignUp} setOpenMenuSignIn={setOpenMenuSignIn} />
+<ModalSignIn  isOpen={openMenuSignIn} setIsOpen={setOpenMenuSignIn} setOpenMenuSignUp={setOpenMenuSignUp} />
+
+</>
   )
 }
 
