@@ -1,6 +1,7 @@
 import React from 'react';
 import moment from 'moment';
 import 'moment/locale/vi';
+import { Link } from 'react-router-dom';
 function ModalSearchMovie({ isOpenSearchMovie, setIsOpenSearchMovie, dataSearch }) {
   return (
     <div>
@@ -11,6 +12,7 @@ function ModalSearchMovie({ isOpenSearchMovie, setIsOpenSearchMovie, dataSearch 
               <div className='absolute right-3 top-1 text-lg text-white font-bold cursor-pointer' onClick={() => setIsOpenSearchMovie(!isOpenSearchMovie)}>x</div>
               
               {dataSearch.map((mv) => (
+                 <Link to={`/detail/${mv.tenPhim}`}>
                 <div key={mv.maPhim} className='flex gap-2 hover:bg-slate-400 cursor-pointer'>
                   <div className='w-1/3' >
                     <img className='object-cover bg-slate-500 h-32 w-32' src={mv.hinhAnh} alt={mv.tenPhim} />
@@ -28,6 +30,7 @@ function ModalSearchMovie({ isOpenSearchMovie, setIsOpenSearchMovie, dataSearch 
                   </div>
                 
                 </div>
+                </Link>
               ))}
             </div>
           </div>

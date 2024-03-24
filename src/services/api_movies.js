@@ -12,14 +12,14 @@ export const api_movies={
     },
 
     getAllMoviesPagination:(curentPage,moviePerPage)=>{
-        return http.get(`/QuanLyPhim/LayDanhSachPhimPhanTrang?maNhom=GP01&soTrang=${curentPage}&soPhanTuTrenTrang=${moviePerPage}`)
+        return http.get(`/QuanLyPhim/LayDanhSachPhimPhanTrang?maNhom=GP04&soTrang=${curentPage}&soPhanTuTrenTrang=${moviePerPage}`)
     },
     getAllTheatures:()=>{
         return http.get('/QuanLyRap/LayThongTinHeThongRap')
     },
     searchAllMovies:(tenPhim,tuNgay,denNgay)=>{
        
-            return http.get(`/QuanLyPhim/LayDanhSachPhimTheoNgay?maNhom=GP01&tenPhim=${tenPhim}&tuNgay=${tuNgay}&denNgay=${denNgay}`)
+            return http.get(`/QuanLyPhim/LayDanhSachPhimTheoNgay?maNhom=GP04&tenPhim=${tenPhim}&tuNgay=${tuNgay}&denNgay=${denNgay}`)
    
        
     },
@@ -27,5 +27,8 @@ export const api_movies={
         return http.get(`/QuanLyRap/LayThongTinLichChieuHeThongRap?maHeThongRap=${maHeThongRap}&maNhom=GP01`)
 
    
+    },
+    getAMovie:(tenPhim)=>{
+        return http.get(`/QuanLyPhim/LayDanhSachPhim?maNhom=GP04&tenPhim=${tenPhim}`)
     }
 }

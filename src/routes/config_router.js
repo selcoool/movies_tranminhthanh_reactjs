@@ -3,7 +3,8 @@ import { BrowserRouter, Routes, Route, useRoutes } from "react-router-dom";
 import Header from '../components/Header';
 import Error from '../components/Error';
 import HomePage from '../pages/HomePage';
-import Management from '../pages/ManagementHome';
+import ManagementPage from '../pages/ManagementPage';
+import DetailPage from '../pages/DetailPage';
 
 function useRouteCustom() {
 
@@ -13,8 +14,12 @@ function useRouteCustom() {
         element:<HomePage/>,
       },
       {
+        path:"/detail/:tenPhim",
+        element:<DetailPage/>
+      },
+      {
         path:"/management",
-        element:<Management/>,
+        element:<ManagementPage/>,
       },
       // {
       // path:"/detail",

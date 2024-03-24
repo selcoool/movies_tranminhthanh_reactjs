@@ -6,6 +6,7 @@ import Pagination from './Pagination';
 import ModalSearchMovie from './ModalSearchMovie';
 import moment from 'moment';
 import 'moment/locale/vi';
+import { Link } from 'react-router-dom';
 
 
 
@@ -118,6 +119,7 @@ function ListMovie() {
 
       <div className='grid grid-cols-1 lg:grid-cols-4 gap-4 px-20'>
         {listMovies.items?.map((movie) => (
+          <Link to={`/detail/${movie.tenPhim}`}>
           <div key={movie.maPhim} className='relative overflow-hidden cursor-pointer group'>
             <div className='w-full shadow-lg shadow-slate-400 '>
               <img className='w-full h-80 object-cover' src={movie.hinhAnh} alt={movie.tenPhim} />
@@ -143,6 +145,7 @@ function ListMovie() {
               <div className='absolute w-full bottom-5 p-3 bg-red-500 text-white text-center'>ĐẶT VÉ</div>
             </div>
           </div>
+          </Link>
            
         ))}
 

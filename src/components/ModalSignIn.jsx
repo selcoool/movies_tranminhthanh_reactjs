@@ -57,7 +57,7 @@ function ModalSignIn({ isOpen, setIsOpen}) {
 
 
                             <div className='flex items-center justify-end gap-3'>
-                                <div className=' min-w-[90px] w-30 h-[34px] bg-sky-400 flex justify-center items-center hover:shadow-md hover:shadow-gray-300 cursor-pointer hover:text-white hover:scale-105 '>Đăng nhập</div>
+                                <div className=' min-w-[90px] w-30 h-[34px] bg-green-500 flex justify-center items-center hover:shadow-md hover:shadow-gray-300 cursor-pointer hover:text-white hover:scale-105 '>Đăng nhập</div>
                             </div>
 
 
