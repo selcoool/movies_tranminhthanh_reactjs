@@ -7,8 +7,8 @@ export const api_movies={
         return http.get("/QuanLyPhim/LayDanhSachBanner")
     },
 
-    getAllMovies:()=>{
-        return http.get("/QuanLyPhim/LayDanhSachPhim")
+    getAllMovies:(tenPhim)=>{
+        return http.get(`/QuanLyPhim/LayDanhSachPhim?maNhom=GP04&tenPhim=${tenPhim}`)
     },
 
     getAllMoviesPagination:(curentPage,moviePerPage)=>{

@@ -13,7 +13,7 @@ import { Link } from 'react-router-dom';
 function ListMovie() {
   const [listMovies, setListMovies] = useState([]);
   const [isOpen, setIsOpen] = useState(false);
-  const [maPhim, setMaPhim] = useState();
+  // const [maPhim, setMaPhim] = useState();
 
   const [tenPhim, setTenPhim] = useState();
   const [tuNgay, setTuNgay] = useState();
@@ -25,11 +25,11 @@ function ListMovie() {
   const [curentPage, setCurrentPage] = useState(1);
   const [moviePerPage, setMoviePerPage] = useState(8);
 
-
+ console.log('tenPhim',tenPhim)
 
 
  
-//   console.log('listMovies',listMovies.items)
+  // console.log('listMovies',listMovies.items)
 
 //   console.log('handleTenPhim',tenPhim)
 //  console.log('handleTuNgay',moment(tuNgay).format('DD/MM/YYYY'))
@@ -119,8 +119,9 @@ function ListMovie() {
 
       <div className='grid grid-cols-1 lg:grid-cols-4 gap-4 px-20'>
         {listMovies.items?.map((movie) => (
-          <Link to={`/detail/${movie.tenPhim}`}>
+          
           <div key={movie.maPhim} className='relative overflow-hidden cursor-pointer group'>
+            <Link to={`/detail/${movie.tenPhim}`}>
             <div className='w-full shadow-lg shadow-slate-400 '>
               <img className='w-full h-80 object-cover' src={movie.hinhAnh} alt={movie.tenPhim} />
             </div>
@@ -138,18 +139,20 @@ function ListMovie() {
               <p className='line-clamp-2'>{movie.moTa}</p>
             </div>
 
+            </Link>
+
             <div className='absolutew-full h-full transition-all duration-100 top-0 flex-col py-3 hidden group-hover:flex'>
-              <div className='absolute top-28 w-full flex justify-center items-center' onClick={()=>[setIsOpen(!isOpen),setMaPhim(movie.maPhim)]}>
+              <div className='absolute top-28 w-full flex justify-center items-center' onClick={()=>[setIsOpen(!isOpen),setTenPhim(movie.tenPhim)]}>
                 <FaRegCirclePlay size={60} />
               </div>
               <div className='absolute w-full bottom-5 p-3 bg-red-500 text-white text-center'>ĐẶT VÉ</div>
             </div>
           </div>
-          </Link>
+          
            
         ))}
 
-     <ModalMovie isOpen={isOpen} setIsOpen={setIsOpen} maPhim={maPhim} />
+     <ModalMovie isOpen={isOpen} setIsOpen={setIsOpen}  tenPhim={tenPhim} />
       </div>
 
 

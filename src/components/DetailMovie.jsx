@@ -5,6 +5,7 @@ import { FaRegCirclePlay } from "react-icons/fa6";
 import moment from 'moment';
 import 'moment/locale/vi';
 import Modal from './Modal';
+import ModalMovie from './ModalMovie';
 
 function DetailMovie({tenPhim}) {
     console.log('pppp',tenPhim)
@@ -60,7 +61,7 @@ function DetailMovie({tenPhim}) {
       }, [tenPhim]);
 
   return (
-    <div className=' mt-8'>
+    <div className=' mt-14'>
     <div className='w-full h-full   flex flex-col justify-center items-center '>
      
 
@@ -138,9 +139,9 @@ function DetailMovie({tenPhim}) {
                       
                    </div>
                 </div>
+                <ModalMovie isOpen={isOpen} setIsOpen={setIsOpen}  tenPhim={movie.tenPhim} />
            
-           
-                <Modal isOpen={isOpen} setIsOpen={setIsOpen} maPhim={movie.maPhim} />
+                {/* <Modal isOpen={isOpen} setIsOpen={setIsOpen} maPhim={movie.maPhim} /> */}
                 </div>
                 
             )
