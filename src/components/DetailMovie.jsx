@@ -61,7 +61,7 @@ function DetailMovie({tenPhim}) {
       }, [tenPhim]);
 
   return (
-    <div className=' mt-14'>
+    <div className=' mt-8'>
     <div className='w-full h-full   flex flex-col justify-center items-center '>
      
 
@@ -75,7 +75,7 @@ function DetailMovie({tenPhim}) {
                      <div className='w-full h-full'>
                        <div className='flex justify-center items-center relative'>
                        
-                        <img className='object-cover ' src={movie.hinhAnh}/>
+                        <img className='object-cover min-w-[400px] ' src={movie.hinhAnh}/>
                       
                        
                        <div className='absolute   text-white text-8xl' onClick={()=>setIsOpen(!isOpen)}><FaRegCirclePlay/></div>
@@ -96,8 +96,8 @@ function DetailMovie({tenPhim}) {
            
                    </div>
            
-                   <div  className='w-full mt-4 mx-2  bg-orange-400'>
-                       <div className='w-full p-2'>
+                   <div  className='w-full  mt-4 mx-2  bg-orange-400'>
+                       <div className='w-full p-2 '>
                            <div className='flex  pt-2 gap-[1px]'>
                            {informations.map((information,IndexInformation)=>{
                                    return (
