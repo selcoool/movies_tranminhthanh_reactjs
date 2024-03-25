@@ -75,7 +75,7 @@ function DetailMovie({tenPhim}) {
                      <div className='w-full h-full'>
                        <div className='flex justify-center items-center relative'>
                        
-                        <img className='object-cover min-w-[400px] ' src={movie.hinhAnh}/>
+                        <img className='object-cover min-w-[450px] lg:min-w-[320px] ' src={movie.hinhAnh}/>
                       
                        
                        <div className='absolute   text-white text-8xl' onClick={()=>setIsOpen(!isOpen)}><FaRegCirclePlay/></div>
