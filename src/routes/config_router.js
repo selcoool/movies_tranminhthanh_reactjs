@@ -5,6 +5,8 @@ import Error from '../components/Error';
 import HomePage from '../pages/HomePage';
 import ManagementPage from '../pages/ManagementPage';
 import DetailPage from '../pages/DetailPage';
+import TheaterPage from '../pages/TheaterPage';
+import ListSeats from '../components/ListSeats';
 
 function useRouteCustom() {
 
@@ -16,6 +18,16 @@ function useRouteCustom() {
       {
         path:"/detail/:tenPhim",
         element:<DetailPage/>
+      },
+      {
+        path:"/theater",
+        element:<TheaterPage/>,
+        children:[
+          {
+            path:"book_ticket/:maLichChieu",
+            element:<ListSeats/>
+          }
+      ]
       },
       {
         path:"/management",

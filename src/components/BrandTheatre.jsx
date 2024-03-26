@@ -3,6 +3,7 @@ import { api_movies } from '../services/api_movies';
 
 import moment from 'moment';
 import 'moment/locale/vi';
+import { Link } from 'react-router-dom';
 
 function BrandTheatre() {
   const [brands, setBrands] = useState([]);
@@ -50,7 +51,7 @@ function BrandTheatre() {
   }, []);
 
   return (
-    <div id='cum_rap' className=' flex justify-center items-center p-5 mx-4'>
+    <div id='cum_rap' className=' flex justify-center items-center py-12 mx-4'>
     <div className='w-fit h-fit'>
       {/* <div className='w-full h-full  flex flex-wrap flex-col justify-center items-center bg-slate-500'> */}
       <h1 className='text-center text-2xl font-bold text-cyan-500 pb-3'>RẠP PHIM VÀ PHIM</h1>
@@ -106,19 +107,30 @@ function BrandTheatre() {
             {relatedBrandMovies?.length >= 1 ? (
               
               relatedBrandMovies.map((relatedBrandMovie, indexRelatedBrandMovie) => (
+
+                
                 <div key={indexRelatedBrandMovie} className='flex flex-col justify-center items-center gap-2 p-4'>
+                  
+
+                 
                   <div><img className='h-40 w-40 object-cover' src={relatedBrandMovie.hinhAnh} alt='' /></div>
+                 
                   <div className='font-bold'>{relatedBrandMovie.tenPhim}</div>
                   <div className='flex flex-col gap-2'>
                     {relatedBrandMovie.lstLichChieuTheoPhim.map((lichChieuTheoPhim, indexLichChieuTheoPhim) => (
-                      <div key={indexLichChieuTheoPhim} className='flex justify-center gap-2'>
+                      <div key={indexLichChieuTheoPhim} className='flex justify-center gap-1'>
+                       
                         {/* <div className='text-white bg-orange-800 p-1 px-2  rounded-lg'>{lichChieuTheoPhim.tenRap}</div> */}
                         <div className='text-white bg-orange-800 p-1 px-2 rounded-lg'>{lichChieuTheoPhim.giaVe.toLocaleString('vi-VN')}</div>
                         <div className='text-white bg-orange-800 p-1 px-2 rounded-lg'>{moment(lichChieuTheoPhim.ngayChieuGioChieu).format('HH:MM:SS')}-{moment(lichChieuTheoPhim.ngayChieuGioChieu).format('DD/MM/YYYY')}</div>
-                        {/* <div className='text-white bg-green-500 p-1  px-2 rounded-lg hover:bg-green-700 cursor-pointer'>Đặt Vé</div> */}
+                        <Link to={`/theater/book_ticket/${lichChieuTheoPhim.maLichChieu}`}>
+                        <div className='text-white bg-green-500 p-1  px-2 rounded-lg hover:bg-green-700 cursor-pointer'>Đặt Vé</div>
+                        </Link>
                       </div>
                     ))}
                   </div>
+                 
+
                 </div>
               ))
             ) : (

@@ -42,7 +42,9 @@ function ModalSignUp({ isOpen, setIsOpen}) {
                                <div className='absolute font-bold text-white right-0 top-1 hover:text-black cursor-pointer' onClick={()=>setIsOpen(!isOpen)}>X</div>
                             </div>
                             
-                           <div className='flex flex-col gap-3 pb-3 pt-12'>
+                            <h1 className='text-center mt-6 text-2xl text-white font-bold'>Thông Tin Đăng Ký</h1>
+                            
+                            <div className='flex flex-col gap-3 pb-3 pt-5'>
                             <div className='flex items-center justify-center gap-1'>
                                 <label className=' min-w-[90px]'>Tên:</label>
                                 <input type='text' className=' flex-1 focus:outline-none px-2 p-1 rounded-lg cursor-pointer' placeholder='Nhập tên người dùng' />
@@ -62,7 +64,7 @@ function ModalSignUp({ isOpen, setIsOpen}) {
 
 
                             <div className='flex items-center justify-end gap-3'>
-                                <div className=' min-w-[60px] w-20 h-[34px] bg-green-500 flex justify-center items-center hover:shadow-md hover:shadow-gray-300 cursor-pointer hover:text-white hover:scale-105 '>Đăng ký</div>
+                                <div className=' min-w-[60px] w-20 h-[34px] bg-green-500 flex justify-center rounded-md items-center hover:shadow-md hover:shadow-gray-300 cursor-pointer hover:text-white hover:scale-105 '>Đăng ký</div>
                             </div>
 
 

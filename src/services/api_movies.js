@@ -31,4 +31,8 @@ export const api_movies={
     getAMovie:(tenPhim)=>{
         return http.get(`/QuanLyPhim/LayDanhSachPhim?maNhom=GP04&tenPhim=${tenPhim}`)
     }
+    ,
+    getAllSeats:(MaLichChieu)=>{
+        return http.get(`/QuanLyDatVe/LayDanhSachPhongVe?MaLichChieu=${MaLichChieu}`)
+    }
 }

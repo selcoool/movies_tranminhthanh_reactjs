@@ -3,7 +3,7 @@ import { api_movies } from '../services/api_movies';
 
 function ModalMovie({ isOpen, setIsOpen,tenPhim }) {
     // console.log('isOpen', isOpen);
-    console.log('tenPhim', tenPhim);
+    // console.log('tenPhim', tenPhim);
 
     const [trailerMovie, setTrailerMovie] = useState();
 

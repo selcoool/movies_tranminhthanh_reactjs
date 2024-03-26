@@ -4,6 +4,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { GiArchiveRegister } from "react-icons/gi";
 import ModalSignUp from './ModalSignUp';
 import ModalSignIn from './ModalSignIn';
+import { Link } from 'react-router-dom';
 
 function Header() {
 
@@ -36,9 +37,9 @@ function Header() {
     </div>
   
     <div className="hidden lg:flex lg:gap-x-12">
-      <a href="#lich_chieu" className="text-lg font-semibold leading-6 text-gray-900 hover:text-white hover:scale-125">Lịch Chiếu</a>
-      <a href="#cum_rap" className="text-lg font-semibold leading-6 text-gray-900 hover:text-white hover:scale-125">Cụm Rạp</a>
-      <a href="#" className="text-lg font-semibold leading-6 text-gray-900 hover:text-white hover:scale-125">Tin Tức</a>
+      <Link to={`/`} className="text-lg font-semibold leading-6 text-gray-900 hover:text-white hover:scale-125">Lịch Chiếu</Link>
+      <Link to={`/theater`} className="text-lg font-semibold leading-6 text-gray-900 hover:text-white hover:scale-125">Cụm Rạp</Link>
+  
       <a href="#ung_dung" className="text-lg font-semibold leading-6 text-gray-900 hover:text-white hover:scale-125">Ứng Dụng</a>
     </div>
     <div className="hidden lg:flex lg:flex-1 lg:justify-end">
@@ -77,9 +78,11 @@ function Header() {
       <div className="mt-6 flow-root">
         <div className="-my-6 divide-y divide-gray-500/10">
           <div className="space-y-2 py-6">
-            <a href="#" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Lịch Chiếu</a>
-            <a href="#" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Cụm Rạp</a>
-            <a href="#" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Tin Tức</a>
+          <Link to={`/`} className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Lịch Chiếu</Link>
+          <Link to={`/theater`} className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Cụm Rạp</Link>
+            {/* <a href="#" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Lịch Chiếu</a> */}
+            {/* <a href="#" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Cụm Rạp</a>
+            <a href="#" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Tin Tức</a> */}
             <a href="#" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Ứng Dụng</a>
           </div>
           <div className="py-6">

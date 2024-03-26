@@ -15,7 +15,7 @@ function Banner() {
     api_movies.getAllBanner()
       .then((data) => {
         setSlides(data.data.content);
-        console.log('yyyyyyyyyyyyyyyyyy',data.data)
+        // console.log('yyyyyyyyyyyyyyyyyy',data.data)
       })
       .catch((err) => {
         console.log('error', err);

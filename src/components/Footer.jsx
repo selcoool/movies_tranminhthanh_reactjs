@@ -12,7 +12,7 @@ function Footer() {
     api_movies.getAllTheatures()
       .then((data) => {
         setBrands(data.data.content)
-        console.log('data', data.data.content);
+        // console.log('data', data.data.content);
       })
       .catch((err) => {
         console.log('error', err);

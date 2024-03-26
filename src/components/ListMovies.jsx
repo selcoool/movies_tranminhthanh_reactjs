@@ -121,10 +121,11 @@ function ListMovie() {
         {listMovies.items?.map((movie) => (
           
           <div key={movie.maPhim} className='relative overflow-hidden cursor-pointer group'>
-            <Link to={`/detail/${movie.tenPhim}`}>
+           
             <div className='w-full shadow-lg shadow-slate-400 '>
               <img className='w-full h-80 object-cover' src={movie.hinhAnh} alt={movie.tenPhim} />
             </div>
+          
             
 
             <div className='flex flex-col py-3  transition-all duration-100 group-hover:hidden'>
@@ -139,14 +140,27 @@ function ListMovie() {
               <p className='line-clamp-2'>{movie.moTa}</p>
             </div>
 
-            </Link>
-
-            <div className='absolutew-full h-full transition-all duration-100 top-0 flex-col py-3 hidden group-hover:flex'>
+         
+            <div className='absolute w-full h-full transition-all duration-100 top-0 flex-col py-3 hidden group-hover:flex gap-1'>
+       
               <div className='absolute top-28 w-full flex justify-center items-center' onClick={()=>[setIsOpen(!isOpen),setTenPhim(movie.tenPhim)]}>
-                <FaRegCirclePlay size={60} />
+                <FaRegCirclePlay className='text-white' size={60} />
               </div>
-              <div className='absolute w-full bottom-5 p-3 bg-red-500 text-white text-center'>ĐẶT VÉ</div>
+            
+              <Link to={`/detail/${movie.tenPhim}`} onClick={()=>setTenPhim(movie.tenPhim)}>
+              <div className='absolute w-full bottom-20 p-3 bg-sky-500 text-white text-center'>CHI TIẾT</div>
+              </Link>
+              <Link to={`/theater`}>
+              <div className='absolute w-full bottom-4 p-3 bg-red-500 text-white text-center'>ĐẶT VÉ</div>
+              </Link>
+              
             </div>
+
+          
+
+          
+
+           
           </div>
           
            
