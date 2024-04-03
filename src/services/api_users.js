@@ -2,7 +2,7 @@ import { http } from "./config_service"
 
 
 
-export const api_movies={
+export const api_users={
     getAllBanner:()=>{
         return http.get("/QuanLyPhim/LayDanhSachBanner")
     },
@@ -34,9 +34,5 @@ export const api_movies={
     ,
     getAllSeats:(MaLichChieu)=>{
         return http.get(`/QuanLyDatVe/LayDanhSachPhongVe?MaLichChieu=${MaLichChieu}`)
-    }
-    ,
-    getAllMoviesManagement:()=>{
-        return http.get(`/QuanLyPhim/LayDanhSachPhim?maNhom=GP04`)
     }
 }

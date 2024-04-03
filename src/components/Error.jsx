@@ -2,8 +2,8 @@ import React from 'react'
 
 function Error() {
   return (
-    <div>
-      Error
+    <div className=' text-center'>
+      Lỗi đường dẫn không đúng !
     </div>
   )
 }

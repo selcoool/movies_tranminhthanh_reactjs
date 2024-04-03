@@ -7,20 +7,20 @@ import { useParams } from 'react-router-dom';
 function ListSeats() {
 
     const {maLichChieu}=useParams()
-    console.log('maLichChieu', maLichChieu)
+    // console.log('maLichChieu', maLichChieu)
     const [bookTickets, setBookTickets] = useState([])
     const [danhSachGhe, setDanhSachGhe] = useState([])
     const [thongTinPhim, setThongTinPhim] = useState([])
   
-    console.log('danhSachGhe', danhSachGhe)
-    console.log('thongTinPhim', thongTinPhim)
-    console.log('bookTickets', bookTickets)
+    // console.log('danhSachGhe', danhSachGhe)
+    // console.log('thongTinPhim', thongTinPhim)
+    // console.log('bookTickets', bookTickets)
 
     useEffect(() => {
         api_movies.getAllSeats(maLichChieu)
             .then((data) => {
 
-                console.log('data.data.content', data.data.content);
+                // console.log('data.data.content', data.data.content);
 
                 setDanhSachGhe(data.data.content.danhSachGhe)
                 setThongTinPhim(data.data.content.thongTinPhim)
@@ -69,12 +69,14 @@ function ListSeats() {
                                     <table className="border border-collapse border-gray-300 w-full">
                                         <thead>
                                             <tr>
-                                               <th className="border border-gray-300 p-2">Loại:</th>
-                                                <th className="border border-gray-300 p-2">Rạp:</th>
-                                                <th className="border border-gray-300 p-2">Ghế:</th>
-                                                <th className="border border-gray-300 p-2">Giá:</th>
+                                               <th className="border border-gray-300 p-2">Loại</th>
+                                                <th className="border border-gray-300 p-2">Rạp</th>
+                                                <th className="border border-gray-300 p-2">Ghế</th>
+                                                <th className="border border-gray-300 p-2">Giá</th>
                                             </tr>
                                         </thead>
+
+                                       
                                         <tbody>
 
                                             {bookTickets?.map((bookTicket,indexBookTickets)=>{
@@ -88,10 +90,11 @@ function ListSeats() {
                                                 </tr>
                                                 )
                                             })}
-                                            
+  
+       
 
                                         </tbody>
-                                    </table>
+                                </table>
 
                                     <div className='bg-red-600 shadow-md shadow-slate-600 p-4 mt-4 rounded-md hover:text-white hover:bg-red-500 cursor-pointer'> ĐẶT VÉ NGAY</div>
                                 </div>
