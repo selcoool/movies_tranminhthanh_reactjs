@@ -46,7 +46,7 @@ function Header() {
     <div className="hidden lg:flex lg:flex-1 lg:justify-end">
       <div className="flex items-center gap-2 text-sm font-semibold leading-6 text-gray-900 transition-all duration-100 hover:text-white hover:scale-110 cursor-pointer" onClick={()=>[setOpenMenuSignIn(!openMenuSignIn),setOpenMenuSignUp(false)]} ><FaUserNinja/>Đăng Nhập <span aria-hidden="true"></span></div>
       <div className="flex items-center gap-2 text-sm font-semibold leading-6 text-gray-900 transition-all duration-100 hover:text-white hover:scale-110 cursor-pointer" onClick={()=>[setOpenMenuSignUp(!openMenuSignUp),setOpenMenuSignIn(false)]}><GiArchiveRegister/>Đăng Ký <span aria-hidden="true"></span></div>
-      <Link to={`/management`} className="flex items-center gap-2 text-sm font-semibold leading-6 text-gray-900 transition-all duration-100 hover:text-white hover:scale-110 cursor-pointer"><FaDatabase/>Quản lý dữ liệu</Link>
+      <Link to={`/management`} className="flex items-center gap-2 text-sm font-semibold leading-6 text-gray-900 transition-all duration-100 hover:text-white hover:scale-110 cursor-pointer"><FaDatabase/>Quản lý</Link>
       {/* <a href="#" className="flex items-center gap-3 text-sm font-semibold leading-6 text-gray-900 transition-all duration-100 hover:text-white hover:scale-125"><FaUserNinja/>Đăng Xuất <span aria-hidden="true"></span></a> */}
    
     </div>

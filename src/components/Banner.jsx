@@ -6,7 +6,7 @@ import { FaRegCirclePlay } from "react-icons/fa6";
 
 function Banner() {
   const [slides, setSlides] = useState();
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(1);
   const [isOpen, setIsOpen] = useState(false);
 
   

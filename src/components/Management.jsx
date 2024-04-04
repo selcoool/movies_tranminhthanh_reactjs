@@ -71,8 +71,7 @@ function Management() {
 
              </div>
              <div  className='md:w-4/6 lg:w-5/6 h-full bg-stone-100 '>
-                     <div className='flex w-full h-full justify-center items-center px-1 lg:px-10 overflow-y-auto
-min-h-[600px]'>
+                     <div className='flex w-full h-full justify-center items-center px-1 lg:px-10 '>
 
                   
                         <div className={`  h-screen w-screen  ${toggleStateMenu===0 ? '' :'hidden'} cursor-pointer`}>
@@ -82,8 +81,9 @@ min-h-[600px]'>
                        
                         <ManagementUser/>
                         </div>
-                        <div className={` h-screen w-screen  ${toggleStateMenu===2 ? '' :'hidden'} cursor-pointer`}>
-                    
+                        <div className={` h-screen w-screen overflow-auto
+min-h-[600px] min-w-[300px]  ${toggleStateMenu===2 ? '' :'hidden'} cursor-pointer`}>
+                            <h1 className='text-4xl text-center text-cyan-500 py-4'>Quản Lý Phim</h1>
                           <ManagementMovie listMovies={listMovies}/>
                
 
