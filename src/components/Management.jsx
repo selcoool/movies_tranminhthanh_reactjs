@@ -66,14 +66,16 @@ function Management() {
     <div className=' w-full h-full flex flex-col justify-center items-center'>
         <div className='flex flex-col md:flex-row w-full h-full'>
              <div className='md:w-2/6 lg:w-1/6  h-full bg-slate-400 '>
-                   <div className='flex gap-2 items-center p-4'>
-                      <div >
+                   <div className='flex flex-col gap-2 items-center p-4'>
+                      <div className='flex justify-center items-center gap-1'>
                         <img className='w-14 h-14 rounded-full' src="https://tse1.mm.bing.net/th?id=OIP.OF59vsDmwxPP1tw7b_8clQHaE8&pid=Api&P=0&h=220" alt='ccc'/>
+                        <span className='text-red-600 font-bold'>Tran Minh Thanh</span>
                       </div>
+                     
                       <div className='flex flex-col'>
-                         <h1 className='text-red-600 font-bold'>Tran Minh Thanh</h1>
-                         <div className='flex gap-2'><span className='text-cyan-700 cursor-pointer text-sm hover:text-slate-300' onClick={()=>[setOpenMenuSignIn(!openMenuSignIn),setOpenMenuSignUp(false)]}>Đăng nhập</span> <span className='text-cyan-700 cursor-pointer text-sm hover:text-slate-300' onClick={()=>[setOpenMenuSignUp(!openMenuSignUp),setOpenMenuSignIn(false)]}>Đăng Ký</span></div>
-                         <Link to={'/'} className='text-gray-50 text-sm hover:text-slate-300'>Trở về</Link>
+                         
+                         <div className='flex justify-center items-center gap-2 pt-2'><span className='text-cyan-900 cursor-pointer text-sm hover:text-slate-300' onClick={()=>[setOpenMenuSignIn(!openMenuSignIn),setOpenMenuSignUp(false)]}>Đăng nhập</span> || <span className='text-cyan-900 cursor-pointer text-sm hover:text-slate-300' onClick={()=>[setOpenMenuSignUp(!openMenuSignUp),setOpenMenuSignIn(false)]}>Đăng Ký</span></div>
+                         {/* <Link to={'/'} className='text-gray-50 text-sm hover:text-slate-300'>Trở về</Link> */}
                       
                       </div>
                    </div>
