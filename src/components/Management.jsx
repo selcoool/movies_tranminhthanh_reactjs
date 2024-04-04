@@ -74,7 +74,7 @@ function Management() {
                      
                       <div className='flex flex-col'>
                          
-                         <div className='flex justify-center items-center gap-2 pt-2 pb-1'><span className='text-cyan-900 cursor-pointer text-sm hover:text-slate-300' onClick={()=>[setOpenMenuSignIn(!openMenuSignIn),setOpenMenuSignUp(false)]}>Đăng nhập</span> || <span className='text-cyan-900 cursor-pointer text-sm hover:text-slate-300' onClick={()=>[setOpenMenuSignUp(!openMenuSignUp),setOpenMenuSignIn(false)]}>Đăng Ký</span></div>
+                         <div className='flex justify-center items-center gap-0.5 pt-2 pb-1'><span className='text-cyan-900 cursor-pointer text-sm hover:text-slate-300' onClick={()=>[setOpenMenuSignIn(!openMenuSignIn),setOpenMenuSignUp(false)]}>Đăng nhập</span> || <span className='text-cyan-900 cursor-pointer text-sm hover:text-slate-300' onClick={()=>[setOpenMenuSignUp(!openMenuSignUp),setOpenMenuSignIn(false)]}>Đăng Ký</span></div>
                          {/* <Link to={'/'} className='text-gray-50 text-sm hover:text-slate-300'>Trở về</Link> */}
                       
                       </div>
