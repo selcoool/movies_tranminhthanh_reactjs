@@ -6,7 +6,7 @@ function ManagementMovie({ listMovies }) {
     console.log('listMovies', listMovies);
     return (
       
-                    <table className="border border-collapse border-gray-300 w-full shadow-gray-400 shadow-md">                    
+                    <table className="border border-collapse border-gray-300 w-full shadow-gray-400 shadow-md ">                    
                         <thead>
                             <tr>
                                 <th className="border border-gray-950 p-0.5 text-center">Ảnh</th>

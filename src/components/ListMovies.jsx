@@ -75,20 +75,20 @@ function ListMovie() {
      
      
       <div className='flex items-center justify-center gap-3'>
-      <label className='lg:min-w-[70px] md:min-w-[35px] min-w-[60px] '>Phim</label>
+      <label className='lg:min-w-[70px] md:min-w-[25px] min-w-[60px] '>Phim</label>
        <input className='md:flex-1 flex-1 focus:outline-none px-2 p-1 cursor-pointer' onChange={(e)=> setTenPhim(e.target.value)} name='tenPhim' type='text' placeholder='Nhập tên phim'/>
       </div>
    
 
      <div className='flex items-center justify-center gap-3'>
-       <label className='lg:min-w-[50px] md:min-w-[25px] min-w-[60px]'>Từ</label>
-       <input className=' md:flex-1 flex-1 focus:outline-none p-1 cursor-pointer' onChange={(e)=> setTuNgay(e.target.value)} name='tuNgay' type='date'   />
+       <label className='lg:min-w-[50px] md:min-w-[10px] min-w-[60px]'>Từ</label>
+       <input className=' md:flex-1 flex-1 focus:outline-none p-1 cursor-pointer'   onChange={(e)=> setTuNgay(e.target.value)} name='tuNgay' type='date'   />
      </div>
 
 
      <div className='flex items-center justify-center gap-3'>
-     <label className='lg:min-w-[50px] md:min-w-[25px] min-w-[60px]'>Đến</label>
-   <input className='md:flex-1  flex-1 focus:outline-none p-1 cursor-pointer' onChange={(e)=> setDenNgay(e.target.value)} name='denNgay' type='date' />
+     <label className='lg:min-w-[50px] md:min-w-[10px] min-w-[60px]'>Đến</label>
+   <input className='md:flex-1  flex-1 focus:outline-none p-1 cursor-pointer'   onChange={(e)=> setDenNgay(e.target.value)} name='denNgay' type='date' />
      </div>
 
 

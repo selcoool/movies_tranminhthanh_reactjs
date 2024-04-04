@@ -2,8 +2,8 @@ import { http } from "./config_service"
 
 
 
-export const api_movies={
+export const api_users={
     getAllUsersManagement:()=>{
-        return http.get(`/QuanLyPhim/LayDanhSachPhim?maNhom=GP04`)
+        return http.get(`/QuanLyNguoiDung/LayDanhSachNguoiDung?MaNhom=GP04`)
     }
 }

@@ -3,11 +3,20 @@ import ManagementUser from './ManagementUser';
 import ManagementMovie from './ManagementMovie';
 import ManagementGeneral from './ManagementGeneral';
 import { api_movies } from '../services/api_movies';
+import { api_users } from '../services/api_users';
+import { Link } from 'react-router-dom';
+import ModalSignUp from './ModalSignUp';
+import ModalSignIn from './ModalSignIn';
 
 function Management() {
 
   const [toggleStateMenu, setToggleStateMenu] = useState(1);
   const [listMovies, setListMovies] = useState([]);
+  const [listUsers, setListUsers] = useState([]);
+
+
+  const [openMenuSignUp,setOpenMenuSignUp]=useState(false)
+ const [openMenuSignIn,setOpenMenuSignIn]=useState(false)
 
   const Links=[
     {
@@ -36,6 +45,21 @@ function Management() {
   }, []);
 
 
+  useEffect(() => {
+    api_users.getAllUsersManagement()
+      .then((data) => {
+      
+        setListUsers(data.data.content);
+
+        console.log('data.data.content USER', data.data.content);
+      })
+      .catch((err) => {
+        console.log('error', err);
+      });
+  }, []);
+
+
+
 
   return (
     <>
@@ -47,15 +71,17 @@ function Management() {
                         <img className='w-14 h-14 rounded-full' src="https://tse1.mm.bing.net/th?id=OIP.OF59vsDmwxPP1tw7b_8clQHaE8&pid=Api&P=0&h=220" alt='ccc'/>
                       </div>
                       <div className='flex flex-col'>
-                         <h1 className='text-white font-bold'>Tran Minh Thanh</h1>
-                         <div className='flex gap-2'><span className='text-cyan-700 cursor-pointer text-sm hover:text-slate-300'>Đăng nhập</span> <span className='text-cyan-700 cursor-pointer text-sm hover:text-slate-300'>Đăng xuất</span></div>
+                         <h1 className='text-red-600 font-bold'>Tran Minh Thanh</h1>
+                         <div className='flex gap-2'><span className='text-cyan-700 cursor-pointer text-sm hover:text-slate-300' onClick={()=>[setOpenMenuSignIn(!openMenuSignIn),setOpenMenuSignUp(false)]}>Đăng nhập</span> <span className='text-cyan-700 cursor-pointer text-sm hover:text-slate-300' onClick={()=>[setOpenMenuSignUp(!openMenuSignUp),setOpenMenuSignIn(false)]}>Đăng Ký</span></div>
+                         <Link to={'/'} className='text-gray-50 text-sm hover:text-slate-300'>Trở về</Link>
+                      
                       </div>
                    </div>
                     <div className='flex flex-row md:flex-col md:py-4  mx-1 gap-1'>
 
                       {Links.map((link,indexLink)=>{
                         return (
-                          <div key={indexLink} className={`p-4 bg-slate-200 hover:bg-slate-50 ${toggleStateMenu === indexLink ? 'bg-blue-200':''} cursor-pointer relative`} onClick={()=>setToggleStateMenu(indexLink)}>
+                          <div key={indexLink} className={`p-4 bg-slate-200 shadow-gray-300 shadow-sm hover:bg-slate-50 ${toggleStateMenu === indexLink ? 'bg-blue-200':''} cursor-pointer relative`} onClick={()=>setToggleStateMenu(indexLink)}>
                             <div className='h-full w-full'>
                             {link.name}
                             </div>
@@ -67,31 +93,38 @@ function Management() {
                       })}
                      
                     </div>
+
+
+     
                      
 
              </div>
-             <div  className='md:w-4/6 lg:w-5/6 h-full bg-stone-100 '>
-                     <div className='flex w-full h-full justify-center items-center px-1 lg:px-10 '>
+             <div  className='md:w-4/6 lg:w-5/6 h-full bg-stone-100'>
+                     <div className='flex w-full h-full justify-center items-center px-1 lg:px-10  '>
 
                   
-                        <div className={`  h-screen w-screen  ${toggleStateMenu===0 ? '' :'hidden'} cursor-pointer`}>
+                        <div className={`  h-screen w-screen overflow-auto lg:min-h-[600px] min-w-[300px]  pb-20 ${toggleStateMenu===0 ? '' :'hidden'} cursor-pointer`}>
                         <ManagementGeneral/>
                         </div>
-                        <div className={`  h-screen w-screen   ${toggleStateMenu===1 ? '' :'hidden'} cursor-pointer`}>
-                       
-                        <ManagementUser/>
+                        <div className={`  h-screen w-screen overflow-auto lg:min-h-[600px] min-w-[300px]  pb-20  ${toggleStateMenu===1 ? '' :'hidden'} cursor-pointer`}>
+                        <h1 className='text-4xl text-center text-cyan-500 py-4'>Quản Lý Người Dùng</h1>
+                        <ManagementUser listUsers={listUsers} />
                         </div>
-                        <div className={` h-screen w-screen overflow-auto
-min-h-[600px] min-w-[300px]  ${toggleStateMenu===2 ? '' :'hidden'} cursor-pointer`}>
+                        <div className={` h-screen w-screen overflow-auto  pb-20 lg:min-h-[600px] min-w-[300px]  ${toggleStateMenu===2 ? '' :'hidden'} cursor-pointer`}>
                             <h1 className='text-4xl text-center text-cyan-500 py-4'>Quản Lý Phim</h1>
                           <ManagementMovie listMovies={listMovies}/>
                
 
                         </div>
+
+                      
                     </div>
             </div>
         </div>
     </div>
+
+    <ModalSignUp  isOpen={openMenuSignUp} setIsOpen={setOpenMenuSignUp} setOpenMenuSignIn={setOpenMenuSignIn} />
+    <ModalSignIn  isOpen={openMenuSignIn} setIsOpen={setOpenMenuSignIn} setOpenMenuSignUp={setOpenMenuSignUp} />
     </>
   )
 }
