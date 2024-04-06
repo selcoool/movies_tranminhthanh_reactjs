@@ -100,8 +100,8 @@ function Management() {
     <div className=' w-full h-full flex flex-col justify-center items-center'>
         <div className=' flex flex-col md:flex-row w-full h-full'>
              <div className='md:w-2/6 lg:w-1/6  h-full bg-orange-400 '>
-                   <div className='flex flex-col gap-2 items-center p-4  group'>
-                      <div className='flex justify-center items-center gap-1'>
+                   <div className='flex flex-col gap-2 items-start justify-center p-4  group'>
+                      <div className='flex justify-center items-start gap-1'>
                         <Link to={'/'} className='relative  flex justify-center items-center'>
                         <img className='w-16 h-16 rounded-full' src="https://tse1.mm.bing.net/th?id=OIP.OF59vsDmwxPP1tw7b_8clQHaE8&pid=Api&P=0&h=220" alt='ccc'/>
                         <div className='absolute text-white rounded-full p-1 bg-red-500 transition-all duration-100 hidden group-hover:flex hover:scale-105'>
