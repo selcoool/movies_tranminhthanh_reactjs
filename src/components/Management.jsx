@@ -68,16 +68,15 @@ function Management() {
              <div className='md:w-2/6 lg:w-1/6  h-full bg-slate-400 '>
                    <div className='flex flex-col gap-2 items-center p-4'>
                       <div className='flex justify-center items-center gap-1'>
-                        <img className='w-14 h-14 rounded-full' src="https://tse1.mm.bing.net/th?id=OIP.OF59vsDmwxPP1tw7b_8clQHaE8&pid=Api&P=0&h=220" alt='ccc'/>
-                        <span className='text-red-600 font-bold'>Tran Minh Thanh</span>
-                      </div>
-                     
-                      <div className='flex flex-col'>
-                         
-                         <div className='flex justify-center items-center gap-0.5 pt-2 pb-1'><span className='text-cyan-900 cursor-pointer text-sm hover:text-slate-300' onClick={()=>[setOpenMenuSignIn(!openMenuSignIn),setOpenMenuSignUp(false)]}>Đăng nhập</span> || <span className='text-cyan-900 cursor-pointer text-sm hover:text-slate-300' onClick={()=>[setOpenMenuSignUp(!openMenuSignUp),setOpenMenuSignIn(false)]}>Đăng Ký</span></div>
-                         {/* <Link to={'/'} className='text-gray-50 text-sm hover:text-slate-300'>Trở về</Link> */}
-                      
-                      </div>
+                        <img className='w-16 h-16 rounded-full' src="https://tse1.mm.bing.net/th?id=OIP.OF59vsDmwxPP1tw7b_8clQHaE8&pid=Api&P=0&h=220" alt='ccc'/>
+                        <span className='text-red-600 font-bold'>Tran Minh Thanh
+                        
+                                <div className='flex flex-col'>
+                                <div className='flex justify-center items-center gap-0.5  '><span className='text-cyan-900 cursor-pointer text-[10px] hover:text-slate-300' onClick={()=>[setOpenMenuSignIn(!openMenuSignIn),setOpenMenuSignUp(false)]}>Đăng nhập</span> || <span className='text-cyan-900 cursor-pointer text-[10px] hover:text-slate-300' onClick={()=>[setOpenMenuSignUp(!openMenuSignUp),setOpenMenuSignIn(false)]}>Đăng Ký</span></div>
+                              </div> 
+                        
+                        </span>
+                      </div> 
                    </div>
                     <div className='flex flex-row md:flex-col md:py-4  mx-1 gap-1'>
 
@@ -102,11 +101,13 @@ function Management() {
 
              </div>
              <div  className='md:w-4/6 lg:w-5/6 h-full bg-stone-100'>
+                    
+
                      <div className='flex w-full h-full justify-center items-center px-1 lg:px-10  '>
 
                   
                         <div className={`  h-screen w-screen overflow-auto lg:min-h-[600px] min-w-[300px]  pb-20 ${toggleStateMenu===0 ? '' :'hidden'} cursor-pointer`}>
-                        <ManagementGeneral/>
+                        <ManagementGeneral listUsers={listUsers}/>
                         </div>
                         <div className={`  h-screen w-screen overflow-auto lg:min-h-[600px] min-w-[300px]  pb-20  ${toggleStateMenu===1 ? '' :'hidden'} cursor-pointer`}>
                         <h1 className='text-4xl text-center text-cyan-500 py-4'>Quản Lý Người Dùng</h1>
@@ -114,6 +115,7 @@ function Management() {
                         </div>
                         <div className={` h-screen w-screen overflow-auto  pb-20 lg:min-h-[600px] min-w-[300px]  ${toggleStateMenu===2 ? '' :'hidden'} cursor-pointer`}>
                             <h1 className='text-4xl text-center text-cyan-500 py-4'>Quản Lý Phim</h1>
+                            
                           <ManagementMovie listMovies={listMovies}/>
                
 
