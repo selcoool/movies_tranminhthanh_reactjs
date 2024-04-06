@@ -32,7 +32,7 @@ function ListSeats() {
     }, [maLichChieu]);
 
     return (
-        <div className='mb-8'>
+        <div className='dark:bg-slate-500 pb-8'>
             <div className=' w-full h-full flex lg:flex-row flex-col justify-center items-center px-8 gap-2'>
 
 

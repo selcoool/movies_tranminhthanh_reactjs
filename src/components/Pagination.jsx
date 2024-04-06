@@ -11,7 +11,7 @@ function Pagination({listMovies,setMoviePerPage,curentPage,setCurrentPage}) {
 
 
   return (
-    <div className='flex justify-center gap-2 pt-2'>
+    <div className=' dark:bg-slate-500 flex justify-center gap-2 pt-2'>
     
      {
       pages.map((page,index)=>{

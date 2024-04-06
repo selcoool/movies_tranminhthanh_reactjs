@@ -4,7 +4,7 @@ import Management from '../components/Management'
 
 function ManagementHome() {
   return (
-    <div className=' w-screen h-screen flex flex-col'>
+    <div className='dark:bg-slate-500 w-screen h-screen flex flex-col'>
 
     {/* <Header/> */}
 
