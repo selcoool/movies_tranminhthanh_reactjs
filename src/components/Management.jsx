@@ -10,7 +10,7 @@ import ModalSignIn from './ModalSignIn';
 
 function Management() {
 
-  const [toggleStateMenu, setToggleStateMenu] = useState(1);
+  const [toggleStateMenu, setToggleStateMenu] = useState(0);
   const [listMovies, setListMovies] = useState([]);
   const [listUsers, setListUsers] = useState([]);
 
@@ -65,10 +65,15 @@ function Management() {
     <>
     <div className=' w-full h-full flex flex-col justify-center items-center'>
         <div className='flex flex-col md:flex-row w-full h-full'>
-             <div className='md:w-2/6 lg:w-1/6  h-full bg-slate-400 '>
-                   <div className='flex flex-col gap-2 items-center p-4'>
+             <div className='md:w-2/6 lg:w-1/6  h-full bg-orange-400 '>
+                   <div className='flex flex-col gap-2 items-center p-4  group'>
                       <div className='flex justify-center items-center gap-1'>
+                        <Link to={'/'} className='relative  flex justify-center items-center'>
                         <img className='w-16 h-16 rounded-full' src="https://tse1.mm.bing.net/th?id=OIP.OF59vsDmwxPP1tw7b_8clQHaE8&pid=Api&P=0&h=220" alt='ccc'/>
+                        <div className='absolute text-white rounded-full p-1 bg-red-500 transition-all duration-100 hidden group-hover:flex hover:scale-105'>
+                          Trở về
+                        </div>
+                       </Link>
                         <span className='text-red-600 font-bold'>Tran Minh Thanh
                         
                                 <div className='flex flex-col'>
@@ -78,7 +83,7 @@ function Management() {
                         </span>
                       </div> 
                    </div>
-                    <div className='flex flex-row md:flex-col md:py-4  mx-1 gap-1'>
+                    <div className='flex flex-row md:flex-col md:py-4  gap-1'>
 
                       {Links.map((link,indexLink)=>{
                         return (
