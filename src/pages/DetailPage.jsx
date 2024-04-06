@@ -9,7 +9,7 @@ function DetailPage() {
     let {tenPhim}=useParams();
  
   return (
-    <div className='w-screen h-screen flex flex-col '>
+    <div className='dark:bg-slate-500 w-screen h-screen flex flex-col '>
     
     <Header/>
     <DetailMovie tenPhim={tenPhim}/>

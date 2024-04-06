@@ -19,7 +19,6 @@ function NightPage() {
     if (darkMode) {
       document.documentElement.classList.add('dark');
       localStorage.setItem('theme', 'dark');
-      document.documentElement.lang = 'en';
     } else {
       document.documentElement.classList.remove('dark');
       localStorage.setItem('theme', 'light');
@@ -31,14 +30,16 @@ function NightPage() {
     const handleScroll = () => {
       const position = window.scrollY;
       setScrollPosition(position);
+
+      // console.log('YYYY',position)
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   useEffect(() => {
-    if (scrollPosition >= 500) {
-        setToggleIcon(true)
+    if (scrollPosition >= 300) {
+      setToggleIcon(true)
     } else {
         setToggleIcon(false)
     } 
@@ -56,6 +57,7 @@ function NightPage() {
       </div>
 
       <a href='#' className={`fixed h-28 bg-orange-600 w-28 ${toggleIcon ? '' :'hidden'} rounded-full bottom-3 right-2`}></a>
+      {/* <a href='#' className={`fixed h-28 bg-orange-600 w-28 hidden rounded-full bottom-3 right-2`}></a> */}
     </div>
   );
 }

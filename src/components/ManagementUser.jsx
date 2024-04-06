@@ -3,7 +3,7 @@ import React from 'react'
 function ManagementUser({listUsers}) {
     console.log('listUsers',listUsers)
   return (
-    <table className="border border-collapse border-gray-300 w-full shadow-gray-400 shadow-md">                    
+    <table className=" border border-collapse border-gray-300 w-full shadow-gray-400 shadow-md">                    
     <thead>
         <tr>
             <th className="border border-gray-950 p-0.5 text-center">Tài Khoản</th>

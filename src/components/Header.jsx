@@ -1,8 +1,11 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { FaUserNinja } from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { GiArchiveRegister } from "react-icons/gi";
 import { FaDatabase } from "react-icons/fa";
+
+import { FaMoon } from 'react-icons/fa';
+import { MdSunny } from 'react-icons/md';
 import ModalSignUp from './ModalSignUp';
 import ModalSignIn from './ModalSignIn';
 import { Link } from 'react-router-dom';
@@ -15,6 +18,13 @@ function Header() {
  const [openMenuSignIn,setOpenMenuSignIn]=useState(false)
 
 
+
+ const [darkMode, setDarkMode] = useState(false);
+ const [scrollPosition, setScrollPosition] = useState(0);
+ const [toggleIconUp, setToggleIconUp] = useState(false);
+ console.log('xxxxxxx',toggleIconUp)
+
+
  const handleCloseMenuNavbar =(e)=>{
     if(e.target.id=="wrapper")
    {
@@ -22,10 +32,50 @@ function Header() {
  
 
    } 
-
-
-    
   }
+
+ 
+
+  useEffect(() => {
+    const theme = localStorage.getItem('theme');
+    setDarkMode(theme === 'dark');
+  }, []);
+
+  
+
+  useEffect(() => {
+    if (darkMode) {
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
+    }
+  }, [darkMode]);
+
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const position = window.scrollY;
+      setScrollPosition(position);
+
+      // console.log('YYYY',position)
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    if (scrollPosition >= 300) {
+      setToggleIconUp(true)
+    } else {
+        setToggleIconUp(false)
+    } 
+  }, [scrollPosition]);
+
+
+
+
   return (
     <>
    <header className="bg-orange-500/85 fixed top-0 right-0 z-40 w-full shadow-lg shadow-slate-600-500/50 border-t-2">
@@ -102,7 +152,8 @@ function Header() {
 
 <ModalSignUp  isOpen={openMenuSignUp} setIsOpen={setOpenMenuSignUp} setOpenMenuSignIn={setOpenMenuSignIn} />
 <ModalSignIn  isOpen={openMenuSignIn} setIsOpen={setOpenMenuSignIn} setOpenMenuSignUp={setOpenMenuSignUp} />
-
+<div  onClick={() => {setDarkMode(!darkMode)}} className={`fixed h-8 w-8  z-10  flex items-center justify-center text-white text-[14px] shadow-sm shadow-slate-500 cursor-pointer ${darkMode ? 'bg-yellow-500' :'bg-red-400'} rounded-full top-11 left-2`}> {darkMode ? <FaMoon /> : <MdSunny />}</div>
+<a href='#' className={`fixed h-14 w-14  z-10 bg-red-500 flex items-center justify-center text-white text-[14px] shadow-sm shadow-slate-500 ${toggleIconUp ? '' :'hidden'} rounded-full bottom-11 right-2`}>Đi lên</a>
 </>
   )
 }

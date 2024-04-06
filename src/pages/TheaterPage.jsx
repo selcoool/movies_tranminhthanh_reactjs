@@ -7,7 +7,7 @@ import { Outlet } from 'react-router-dom'
 
 function TheaterPage() {
   return (
-    <div className='w-screen h-screen flex flex-col '>
+    <div className='dark:bg-slate-500 w-screen h-screen flex flex-col '>
        <Header/>
        {/* <ListSeats/> */}
 

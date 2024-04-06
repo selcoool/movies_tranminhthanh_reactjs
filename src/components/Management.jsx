@@ -8,6 +8,9 @@ import { Link } from 'react-router-dom';
 import ModalSignUp from './ModalSignUp';
 import ModalSignIn from './ModalSignIn';
 
+import { FaMoon } from 'react-icons/fa';
+import { MdSunny } from 'react-icons/md';
+
 function Management() {
 
   const [toggleStateMenu, setToggleStateMenu] = useState(0);
@@ -17,6 +20,14 @@ function Management() {
 
   const [openMenuSignUp,setOpenMenuSignUp]=useState(false)
  const [openMenuSignIn,setOpenMenuSignIn]=useState(false)
+
+
+ const [darkMode, setDarkMode] = useState();
+ const [scrollPosition, setScrollPosition] = useState(0);
+ const [toggleIconUp, setToggleIconUp] = useState(false);
+ console.log('xxxxxxx',darkMode)
+
+
 
   const Links=[
     {
@@ -61,10 +72,33 @@ function Management() {
 
 
 
+
+ 
+ 
+   useEffect(() => {
+     const theme = localStorage.getItem('theme');
+     setDarkMode(theme === 'dark');
+   }, []);
+ 
+   
+ 
+   useEffect(() => {
+     if (darkMode) {
+       document.documentElement.classList.add('dark');
+       localStorage.setItem('theme', 'dark');
+     } else {
+       document.documentElement.classList.remove('dark');
+       localStorage.setItem('theme', 'light');
+     }
+   }, [darkMode]);
+
+
+
+
   return (
     <>
     <div className=' w-full h-full flex flex-col justify-center items-center'>
-        <div className='flex flex-col md:flex-row w-full h-full'>
+        <div className=' flex flex-col md:flex-row w-full h-full'>
              <div className='md:w-2/6 lg:w-1/6  h-full bg-orange-400 '>
                    <div className='flex flex-col gap-2 items-center p-4  group'>
                       <div className='flex justify-center items-center gap-1'>
@@ -83,11 +117,11 @@ function Management() {
                         </span>
                       </div> 
                    </div>
-                    <div className='flex flex-row md:flex-col md:py-4  gap-1'>
+                    <div className=' flex flex-row md:flex-col md:py-4  gap-1'>
 
                       {Links.map((link,indexLink)=>{
                         return (
-                          <div key={indexLink} className={`p-4 bg-slate-200 shadow-gray-300 shadow-sm hover:bg-slate-50 ${toggleStateMenu === indexLink ? 'bg-blue-200':''} cursor-pointer relative`} onClick={()=>setToggleStateMenu(indexLink)}>
+                          <div key={indexLink} className={` p-4 bg-slate-200 shadow-gray-300 shadow-sm hover:bg-slate-50 ${toggleStateMenu === indexLink ? 'bg-blue-200':''} cursor-pointer relative`} onClick={()=>setToggleStateMenu(indexLink)}>
                             <div className='h-full w-full'>
                             {link.name}
                             </div>
@@ -108,7 +142,7 @@ function Management() {
              <div  className='md:w-4/6 lg:w-5/6 h-full bg-stone-100'>
                     
 
-                     <div className='flex w-full h-full justify-center items-center px-1 lg:px-10  '>
+                     <div className='dark:bg-blue-100 flex w-full h-full justify-center items-center px-1 lg:px-10  '>
 
                   
                         <div className={`  h-screen w-screen overflow-auto lg:min-h-[600px] min-w-[300px]  pb-20 ${toggleStateMenu===0 ? '' :'hidden'} cursor-pointer`}>
@@ -118,7 +152,7 @@ function Management() {
                         <h1 className='text-4xl text-center text-cyan-500 py-4'>Quản Lý Người Dùng</h1>
                         <ManagementUser listUsers={listUsers} />
                         </div>
-                        <div className={` h-screen w-screen overflow-auto  pb-20 lg:min-h-[600px] min-w-[300px]  ${toggleStateMenu===2 ? '' :'hidden'} cursor-pointer`}>
+                        <div className={`h-screen w-screen overflow-auto  pb-20 lg:min-h-[600px] min-w-[300px]  ${toggleStateMenu===2 ? '' :'hidden'} cursor-pointer`}>
                             <h1 className='text-4xl text-center text-cyan-500 py-4'>Quản Lý Phim</h1>
                             
                           <ManagementMovie listMovies={listMovies}/>
@@ -134,6 +168,8 @@ function Management() {
 
     <ModalSignUp  isOpen={openMenuSignUp} setIsOpen={setOpenMenuSignUp} setOpenMenuSignIn={setOpenMenuSignIn} />
     <ModalSignIn  isOpen={openMenuSignIn} setIsOpen={setOpenMenuSignIn} setOpenMenuSignUp={setOpenMenuSignUp} />
+
+    <div  onClick={() => {setDarkMode(!darkMode)}} className={`fixed h-8 w-8  z-10  flex items-center justify-center text-white text-[14px] shadow-sm shadow-slate-500 cursor-pointer ${darkMode ? 'bg-yellow-500' :'bg-red-400'} rounded-full top-6 right-2`}> {darkMode ? <FaMoon /> : <MdSunny />}</div>
     </>
   )
 }

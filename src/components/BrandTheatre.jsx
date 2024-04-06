@@ -51,7 +51,7 @@ function BrandTheatre() {
   }, []);
 
   return (
-    <div id='cum_rap' className=' flex justify-center items-center py-12 mx-4'>
+    <div id='cum_rap' className=' flex justify-center items-center py-12 mx-4 dark:bg-slate-500'>
     <div className='w-fit h-fit'>
       {/* <div className='w-full h-full  flex flex-wrap flex-col justify-center items-center bg-slate-500'> */}
       <h1 className='text-center text-2xl font-bold text-cyan-500 pb-3'>RẠP PHIM VÀ PHIM</h1>

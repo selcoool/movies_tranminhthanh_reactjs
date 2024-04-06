@@ -63,7 +63,7 @@ function ListMovie() {
 
 
   return (
-    <div id='lich_chieu'>
+    <div id='lich_chieu' className='dark:bg-slate-500'>
     <div className=' w-full h-full  flex flex-col justify-center items-center  relative'>
 
      <div className=' flex flex-col justify-center items-center my-3'>
