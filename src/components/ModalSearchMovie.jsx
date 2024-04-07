@@ -7,10 +7,11 @@ function ModalSearchMovie({ isOpenSearchMovie, setIsOpenSearchMovie, dataSearch 
     <div>
       {isOpenSearchMovie && dataSearch?.length >= 1 ? (
         <div className='w-full h-full bg-orange-500 flex items-center justify-center'>
-          <div className='border-2 absolute h-fit  w-[350px] lg:w-[550px] top-[250px] lg:top-28  z-20'>
-            <div className='flex flex-col gap-1 bg-red-400  relative'>
+          <div className='border-2 absolute h-fit  w-[350px] lg:w-[550px] top-[250px] lg:top-28  z-20  '>
+            <div className='flex flex-col gap-1 bg-red-400  relative '>
               <div className='absolute right-3 top-1 text-lg text-white font-bold cursor-pointer' onClick={() => setIsOpenSearchMovie(!isOpenSearchMovie)}>x</div>
               
+              <div className='max-h-[400px] overflow-y-auto no-scrollbar '>
               {dataSearch.map((mv) => (
                  <Link to={`/detail/${mv.tenPhim}`}>
                 <div key={mv.maPhim} className='flex gap-2 hover:bg-slate-400 cursor-pointer'>
@@ -32,6 +33,7 @@ function ModalSearchMovie({ isOpenSearchMovie, setIsOpenSearchMovie, dataSearch 
                 </div>
                 </Link>
               ))}
+               </div>
             </div>
           </div>
         </div>
