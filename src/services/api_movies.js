@@ -18,10 +18,12 @@ export const api_movies={
         return http.get('/QuanLyRap/LayThongTinHeThongRap')
     },
     searchAllMovies:(tenPhim,tuNgay,denNgay)=>{
-       
-    return http.get(`/QuanLyPhim/LayDanhSachPhimTheoNgay?maNhom=GP04&tenPhim=${tenPhim}&tuNgay=${tuNgay}&denNgay=${denNgay}`)
-   
-       
+        if (typeof tenPhim === 'undefined' || tenPhim.trim() === '') {
+            return http.get(`/QuanLyPhim/LayDanhSachPhimTheoNgay?maNhom=GP04&tuNgay=${tuNgay}&denNgay=${denNgay}`);
+         } else {
+            return http.get(`/QuanLyPhim/LayDanhSachPhimTheoNgay?maNhom=GP04&tenPhim=${tenPhim}&tuNgay=${tuNgay}&denNgay=${denNgay}`);
+          }
+        
     },
     getAllMoviesInTheatre:(maHeThongRap)=>{
         return http.get(`/QuanLyRap/LayThongTinLichChieuHeThongRap?maHeThongRap=${maHeThongRap}&maNhom=GP01`)

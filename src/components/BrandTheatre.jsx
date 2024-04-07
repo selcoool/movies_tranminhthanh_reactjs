@@ -4,6 +4,7 @@ import { api_movies } from '../services/api_movies';
 import moment from 'moment';
 import 'moment/locale/vi';
 import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 function BrandTheatre() {
   const [brands, setBrands] = useState([]);
@@ -50,11 +51,17 @@ function BrandTheatre() {
     findMoviesInTheatre('BHDStar');
   }, []);
 
+
+  function handleMoveToTopAfterChoose() {
+    // window.location.href = `/theater/book_ticket/${lichChieuTheoPhim.maLichChieu}`;
+    window.scrollTo(0, 0); // Scroll về đầu trang
+  }
+
   return (
-    <div id='cum_rap' className='dark:bg-slate-500 flex justify-center items-center '>
+    <div id='cum_rap' className='dark:bg-slate-500 flex justify-center items-center p-8 '>
     <div className='w-fit h-fit'>
       {/* <div className='w-full h-full  flex flex-wrap flex-col justify-center items-center bg-slate-500'> */}
-      <h1 className='text-center text-2xl font-bold text-cyan-500 pb-3'>RẠP PHIM VÀ PHIM</h1>
+      <h1 className='text-center text-2xl font-bold text-cyan-500 py-3'>RẠP PHIM VÀ PHIM</h1>
         <div className='flex flex-col lg:flex-row  lg:max-h-[500px] h-fit gap-1 shadow-lg shadow-slate-400'>
           
           <div className='tabs flex flex-row lg:flex-col justify-center items-center gap-1'>
@@ -123,9 +130,10 @@ function BrandTheatre() {
                         {/* <div className='text-white bg-orange-800 p-1 px-2  rounded-lg'>{lichChieuTheoPhim.tenRap}</div> */}
                         <div className='text-white bg-orange-800 p-1 px-2 rounded-lg'>{lichChieuTheoPhim.giaVe.toLocaleString('vi-VN')}</div>
                         <div className='text-white bg-orange-800 p-1 px-2 rounded-lg'>{moment(lichChieuTheoPhim.ngayChieuGioChieu).format('HH:MM:SS')}-{moment(lichChieuTheoPhim.ngayChieuGioChieu).format('DD/MM/YYYY')}</div>
-                        <Link to={`/theater/book_ticket/${lichChieuTheoPhim.maLichChieu}`}>
+                        <Link to={`/theater/book_ticket/${lichChieuTheoPhim.maLichChieu}`} onClick={handleMoveToTopAfterChoose}>
                         <div className='text-white bg-green-500 p-1  px-2 rounded-lg hover:bg-green-700 cursor-pointer'>Đặt Vé</div>
                         </Link>
+                 
                       </div>
                     ))}
                   </div>

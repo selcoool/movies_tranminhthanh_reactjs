@@ -9,8 +9,14 @@ import { MdSunny } from 'react-icons/md';
 import ModalSignUp from './ModalSignUp';
 import ModalSignIn from './ModalSignIn';
 import { Link } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
 function Header() {
+
+  const location = useLocation();
+  const { pathname } = location;
+
+  console.log('dasdas',pathname)
 
  const [openMenuNavbar,setOpenMenuNavbar]=useState(false)
 
@@ -74,6 +80,10 @@ function Header() {
   }, [scrollPosition]);
 
 
+  function handleMoveToTopAfterChoose() {
+    // window.location.href = `/theater/book_ticket/${lichChieuTheoPhim.maLichChieu}`;
+    window.scrollTo(0, 0); // Scroll về đầu trang
+  }
 
 
   return (
@@ -88,8 +98,8 @@ function Header() {
     </div>
   
     <div className="hidden lg:flex lg:gap-x-12">
-      <Link to={`/`} className="text-lg font-semibold leading-6 text-gray-900 hover:text-white hover:scale-125">Lịch Chiếu</Link>
-      <Link to={`/theater`} className="text-lg font-semibold leading-6 text-gray-900 hover:text-white hover:scale-125">Cụm Rạp</Link>
+      <Link to={`/`} className={`text-lg font-semibold leading-6 ${pathname==='/' ? 'text-white' :'text-gray-900'}  hover:text-white hover:scale-125`}>Lịch Chiếu</Link>
+      <Link to={`/theater`} className={`text-lg font-semibold leading-6 ${pathname==='/theater' ? 'text-white' :'text-gray-900'} hover:text-white hover:scale-125`}>Cụm Rạp</Link>
   
       <a href="#ung_dung" className="text-lg font-semibold leading-6 text-gray-900 hover:text-white hover:scale-125">Ứng Dụng</a>
     </div>
@@ -130,8 +140,8 @@ function Header() {
       <div className="mt-6 flow-root">
         <div className="-my-6 divide-y divide-gray-500/10">
           <div className="space-y-2 py-6">
-          <Link to={`/`} className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Lịch Chiếu</Link>
-          <Link to={`/theater`} className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Cụm Rạp</Link>
+          <Link to={`/`} className={`-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 ${pathname==='/' ? 'text-white' :'text-gray-900'}  hover:bg-gray-50`}>Lịch Chiếu</Link>
+          <Link to={`/theater`} className={`-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 ${pathname==='/theater' ? 'text-white' :'text-gray-900'}  hover:bg-gray-50`}>Cụm Rạp</Link>
             {/* <a href="#" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Lịch Chiếu</a> */}
             {/* <a href="#" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Cụm Rạp</a>
             <a href="#" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Tin Tức</a> */}
@@ -153,7 +163,7 @@ function Header() {
 <ModalSignUp  isOpen={openMenuSignUp} setIsOpen={setOpenMenuSignUp} setOpenMenuSignIn={setOpenMenuSignIn} />
 <ModalSignIn  isOpen={openMenuSignIn} setIsOpen={setOpenMenuSignIn} setOpenMenuSignUp={setOpenMenuSignUp} />
 <div  onClick={() => {setDarkMode(!darkMode)}} className={`fixed h-8 w-8  z-10  flex items-center justify-center text-white text-[14px] shadow-sm shadow-slate-500 cursor-pointer ${darkMode ? 'bg-yellow-500' :'bg-red-400'} rounded-full top-11 left-2`}> {darkMode ? <FaMoon /> : <MdSunny />}</div>
-<a href='#' className={`fixed h-14 w-14  z-10 bg-red-500 flex items-center justify-center text-white text-[14px] shadow-sm shadow-slate-500 ${toggleIconUp ? '' :'hidden'} rounded-full bottom-11 right-2`}>Đi lên</a>
+<div  className={`fixed h-14 w-14  z-10 bottom-20 bg-red-500 flex items-center justify-center text-white text-[14px] shadow-sm shadow-slate-500 cursor-pointer ${toggleIconUp ? '' :'hidden'} rounded-full bottom-11 right-2`} onClick={handleMoveToTopAfterChoose}>Đi lên</div>
 </>
   )
 }

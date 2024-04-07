@@ -37,14 +37,23 @@ function ListMovie() {
 
 
   const handleFind=()=>{
-        api_movies.searchAllMovies(tenPhim || null,moment(tuNgay).format('DD/MM/YYYY') || null , moment(denNgay).format('DD/MM/YYYY') || null)
+        
+// console.log('tenPhim',tenPhim.trim())
+// console.log("moment(tuNgay).format('DD/MM/YYYY')",moment(tuNgay).format('DD/MM/YYYY'))
+// console.log("moment(denNgay).format('DD/MM/YYYY')",moment(denNgay).format('DD/MM/YYYY'))
+
+
+      api_movies.searchAllMovies(tenPhim,moment(tuNgay).format('DD/MM/YYYY'), moment(denNgay).format('DD/MM/YYYY'))
+  
+         
+  
       .then((data) => {
-        // console.log('data111', data.data.content);
-        setDataSearch(data.data.content);
-      })
-      .catch((err) => {
-        console.log('error', err);
-      });
+      console.log('data111', data.data.content);
+      setDataSearch(data.data.content);
+    })
+    .catch((err) => {
+      console.log('error', err);
+    });
 
 
   }
@@ -63,7 +72,7 @@ function ListMovie() {
 
 
   return (
-    <div id='lich_chieu' className='dark:bg-slate-500'>
+    <div id='lich_chieu' >
     <div className=' w-full h-full  flex flex-col justify-center items-center  relative'>
 
      <div className=' flex flex-col justify-center items-center my-3'>
@@ -82,7 +91,7 @@ function ListMovie() {
 
      <div className='flex items-center justify-center gap-3'>
        <label className='lg:min-w-[50px] md:min-w-[10px] min-w-[60px]'>Từ</label>
-       <input className=' md:flex-1 flex-1 focus:outline-none p-1 cursor-pointer'   onChange={(e)=> setTuNgay(e.target.value)} name='tuNgay' type='date'   />
+       <input className=' md:flex-1 flex-1 focus:outline-none p-1 cursor-pointer'  onChange={(e)=> setTuNgay(e.target.value)} name='tuNgay' type='date'   />
      </div>
 
 

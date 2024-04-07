@@ -104,7 +104,7 @@ function Management() {
                       <div className='flex justify-center items-start gap-1'>
                         <Link to={'/'} className='relative  flex justify-center items-center'>
                         <img className='w-16 h-16 rounded-full' src="https://tse1.mm.bing.net/th?id=OIP.OF59vsDmwxPP1tw7b_8clQHaE8&pid=Api&P=0&h=220" alt='ccc'/>
-                        <div className='absolute text-white rounded-full p-1 bg-red-500 transition-all duration-100 hidden group-hover:flex hover:scale-105'>
+                        <div className='absolute text-white rounded-full  transition-all duration-100 hidden group-hover:flex hover:scale-105'>
                           Trở về
                         </div>
                        </Link>
@@ -117,7 +117,7 @@ function Management() {
                         </span>
                       </div> 
                    </div>
-                    <div className=' flex flex-row md:flex-col md:py-4  gap-1'>
+                    <div className=' flex flex-row md:flex-col md:py-4  gap-0.5'>
 
                       {Links.map((link,indexLink)=>{
                         return (
@@ -139,7 +139,7 @@ function Management() {
                      
 
              </div>
-             <div  className='md:w-4/6 lg:w-5/6 h-full bg-stone-100'>
+             <div  className='md:w-4/6 lg:w-5/6 h-full bg-orange-200'>
                     
 
                      <div className='dark:bg-blue-100 flex w-full h-full justify-center items-center px-1 lg:px-10  '>
