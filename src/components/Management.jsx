@@ -10,6 +10,8 @@ import ModalSignIn from './ModalSignIn';
 
 import { FaMoon } from 'react-icons/fa';
 import { MdSunny } from 'react-icons/md';
+import ModalAddMovie from './ModalAddMovie';
+import ModalEditMovie from './ModalEditMovie';
 
 function Management() {
 
@@ -27,6 +29,13 @@ function Management() {
  const [toggleIconUp, setToggleIconUp] = useState(false);
  console.log('xxxxxxx',darkMode)
 
+
+ const [openMenuAddMovie,setOpenMenuAddMovie]=useState(false)
+ const [openMenuEditMovie,setOpenMenuEditMovie]=useState(false)
+
+ const [openMenuAddUser,setOpenMenuAddUser]=useState(false)
+ const [openMenuEditUser,setOpenMenuEditUser]=useState(false)
+ console.log('openMenuAddMovie',openMenuAddMovie)
 
 
   const Links=[
@@ -150,12 +159,12 @@ function Management() {
                         </div>
                         <div className={`  h-screen w-screen overflow-auto lg:min-h-[600px] min-w-[300px]  pb-20  ${toggleStateMenu===1 ? '' :'hidden'} cursor-pointer`}>
                         <h1 className='text-4xl text-center text-cyan-500 py-4'>Quản Lý Người Dùng</h1>
-                        <ManagementUser listUsers={listUsers} />
+                        <ManagementUser listUsers={listUsers} setOpenMenuEditUser={setOpenMenuEditUser} setOpenMenuAddUser={setOpenMenuAddUser}  />
                         </div>
                         <div className={`h-screen w-screen overflow-auto  pb-20 lg:min-h-[600px] min-w-[300px]  ${toggleStateMenu===2 ? '' :'hidden'} cursor-pointer`}>
                             <h1 className='text-4xl text-center text-cyan-500 py-4'>Quản Lý Phim</h1>
                             
-                          <ManagementMovie listMovies={listMovies}/>
+                          <ManagementMovie listMovies={listMovies}  setOpenMenuEditMovie={setOpenMenuEditMovie} setOpenMenuAddMovie={setOpenMenuAddMovie}/>
                
 
                         </div>
@@ -168,6 +177,8 @@ function Management() {
 
     <ModalSignUp  isOpen={openMenuSignUp} setIsOpen={setOpenMenuSignUp} setOpenMenuSignIn={setOpenMenuSignIn} />
     <ModalSignIn  isOpen={openMenuSignIn} setIsOpen={setOpenMenuSignIn} setOpenMenuSignUp={setOpenMenuSignUp} />
+    <ModalAddMovie  isOpen={openMenuAddMovie} setIsOpen={setOpenMenuAddMovie} />
+    <ModalEditMovie  isOpen={openMenuEditMovie} setIsOpen={setOpenMenuEditMovie} />
 
     <div  onClick={() => {setDarkMode(!darkMode)}} className={`fixed h-8 w-8  z-10  flex items-center justify-center text-white text-[14px] shadow-sm shadow-slate-500 cursor-pointer ${darkMode ? 'bg-yellow-500' :'bg-red-400'} rounded-full top-6 right-2`}> {darkMode ? <FaMoon /> : <MdSunny />}</div>
     </>
