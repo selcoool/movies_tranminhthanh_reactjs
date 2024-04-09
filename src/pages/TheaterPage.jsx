@@ -16,7 +16,7 @@ function TheaterPage() {
        <Outlet/>
 
        <BrandTheatre/>
-      <GoogleMap/>
+      {/* <GoogleMap/> */}
    
    <Footer/>
     </div>
