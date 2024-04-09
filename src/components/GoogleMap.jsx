@@ -11,7 +11,7 @@ function GoogleMap() {
   
     useEffect(() => {
       const loader = new Loader({
-        apiKey: "AIzaSyBhy7LJ401L2QNiBDB8eCQazXTI3rqCKjY",
+        apiKey: process.env.REACT_APP_APIKEY,
         version: 'weekly',
         // process.env.REACT_APP_APIKEY
       });
@@ -70,7 +70,7 @@ function GoogleMap() {
     return (
 
         <div className='dark:bg-slate-500 flex  justify-center items-center '>
-        <div className=' h-screen w-screen flex lg:flex-row flex-col justify-center items-center'>
+        <div className=' h-[450px] w-screen flex lg:flex-row flex-col justify-center items-center'>
          
                 <div id="map" style={{ height: '100%', width: '100%' }} ></div>
 
