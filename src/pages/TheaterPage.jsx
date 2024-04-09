@@ -4,6 +4,7 @@ import ListSeats from '../components/ListSeats'
 import BrandTheatre from '../components/BrandTheatre'
 import Footer from '../components/Footer'
 import { Outlet } from 'react-router-dom'
+import GoogleMap from '../components/GoogleMap'
 
 function TheaterPage() {
   return (
@@ -15,7 +16,7 @@ function TheaterPage() {
        <Outlet/>
 
        <BrandTheatre/>
-   
+      <GoogleMap/>
    
    <Footer/>
     </div>

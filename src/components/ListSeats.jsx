@@ -3,6 +3,7 @@ import { api_movies } from '../services/api_movies';
 import ModalMovie from './ModalMovie';
 import { FaRegCirclePlay } from 'react-icons/fa6';
 import { useParams } from 'react-router-dom';
+import ModalSignIn from './ModalSignIn';
 
 function ListSeats() {
 
@@ -11,8 +12,11 @@ function ListSeats() {
     const [bookTickets, setBookTickets] = useState([])
     const [danhSachGhe, setDanhSachGhe] = useState([])
     const [thongTinPhim, setThongTinPhim] = useState([])
+
+
+    const [openMenuSignIn,setOpenMenuSignIn]=useState(false)
   
-    // console.log('danhSachGhe', danhSachGhe)
+    console.log('openMenuSignIn', openMenuSignIn)
     // console.log('thongTinPhim', thongTinPhim)
     // console.log('bookTickets', bookTickets)
 
@@ -51,10 +55,10 @@ function ListSeats() {
                             <h1 className='font-bold text-blue-700 text-3xl text-center py-2'>{thongTinPhim.tenPhim}</h1>
                         </div>
                         <div>
-                            <span className='font-bold'>Thời gian: </span><span className='text-blue-600'>{thongTinPhim.gioChieu} - {thongTinPhim.ngayChieu}</span>
+                            <span className='font-bold'>Thời gian: </span><span className='font-bold text-sky-500'>{thongTinPhim.gioChieu} - {thongTinPhim.ngayChieu}</span>
                         </div>
                         <div>
-                            <span className='font-bold'>Rạp: </span><span className='text-pink-600'> {thongTinPhim.tenRap}</span>
+                            <span className='font-bold'>Rạp: </span><span className='text-orange-500'> {thongTinPhim.tenRap}</span>
                         </div>
                         <div>
                             <span className='font-bold'>Địa chỉ: </span><span className='text-stone-700'> {thongTinPhim.diaChi}</span>
@@ -96,7 +100,7 @@ function ListSeats() {
                                         </tbody>
                                 </table>
 
-                                    <div className='bg-red-600 shadow-md shadow-slate-600 p-4 mt-4 rounded-md hover:text-white hover:bg-red-500 cursor-pointer'> ĐẶT VÉ NGAY</div>
+                                    <div className='bg-red-600 shadow-md shadow-slate-600 p-4 mt-4 rounded-md hover:text-white hover:bg-red-500 cursor-pointer' onClick={()=>setOpenMenuSignIn(!openMenuSignIn)}> ĐẶT VÉ NGAY</div>
                                 </div>
 
 
@@ -126,6 +130,16 @@ function ListSeats() {
 
 
             </div>
+
+
+            <ModalSignIn  isOpen={openMenuSignIn} setIsOpen={setOpenMenuSignIn}  />
+
+
+          
+           
+
+
+
         </div>
     )
 }

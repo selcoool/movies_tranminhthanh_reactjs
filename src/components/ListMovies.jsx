@@ -113,10 +113,10 @@ function ListMovie() {
 
 
 
-  {/* <div className='overflow-auto lg:min-h-[600px] min-w-[300px]'> */}
+
 
 <ModalSearchMovie isOpenSearchMovie={isOpenSearchMovie} setIsOpenSearchMovie={setIsOpenSearchMovie} dataSearch={dataSearch} />
-{/* </div> */}
+
 
 
 
