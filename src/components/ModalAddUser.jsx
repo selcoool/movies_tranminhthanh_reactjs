@@ -3,6 +3,7 @@ import { api_movies } from '../services/api_movies';
 import { useFormik } from 'formik';
 // import { basicSchema } from '../schemas';
 import * as yup from "yup"
+import { api_users } from '../services/api_users';
 
 
 function ModalAddUser({ isOpen, setIsOpen}) {
@@ -97,7 +98,7 @@ function ModalAddUser({ isOpen, setIsOpen}) {
                 
               }
               console.log('formData',formData)
-                 const res=await api_movies.createAMovie(formData)
+                 const res=await api_users.createAUser(formData)
 
             
             

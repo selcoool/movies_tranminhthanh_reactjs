@@ -12,6 +12,19 @@ function ModalDeleteMovie({ isOpen, setIsOpen}) {
         }
     }
 
+    const handleDeleteMovie=()=>{
+        api_movies.deleteAMovie()
+        .then((data) => {
+  
+         console.log('data',data);
+        })
+        .catch((err) => {
+          console.log('error', err);
+        });
+        
+
+    }
+
 
 
     return (
@@ -47,7 +60,7 @@ function ModalDeleteMovie({ isOpen, setIsOpen}) {
 
 
                             <div className='flex items-center justify-end gap-3'>
-                                <div className=' min-w-[90px] w-30 h-[34px] bg-green-500 flex justify-center rounded-md items-center hover:shadow-md hover:shadow-gray-300 cursor-pointer hover:text-white hover:scale-105 '>Xóa</div>
+                                <div className=' min-w-[90px] w-30 h-[34px] bg-green-500 flex justify-center rounded-md items-center hover:shadow-md hover:shadow-gray-300 cursor-pointer hover:text-white hover:scale-105 ' onClick={()=>handleDeleteMovie()}>Xóa</div>
                             </div>
 
 

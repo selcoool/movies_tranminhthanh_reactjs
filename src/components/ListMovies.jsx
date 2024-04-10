@@ -16,8 +16,8 @@ function ListMovie() {
   // const [maPhim, setMaPhim] = useState();
 
   const [tenPhim, setTenPhim] = useState();
-  const [tuNgay, setTuNgay] = useState();
-  const [denNgay, setDenNgay] = useState();
+  const [tuNgay, setTuNgay] = useState('2024-10-10');
+  const [denNgay, setDenNgay] = useState('2024-12-12');
   const [dataSearch,setDataSearch]= useState();
   const [isOpenSearchMovie, setIsOpenSearchMovie]=useState(false);
     
@@ -91,13 +91,13 @@ function ListMovie() {
 
      <div className='flex items-center justify-center gap-3'>
        <label className='lg:min-w-[50px] md:min-w-[10px] min-w-[60px]'>Từ</label>
-       <input className=' md:flex-1 flex-1 focus:outline-none p-1 cursor-pointer'  onChange={(e)=> setTuNgay(e.target.value)} name='tuNgay' type='date'   />
+       <input className=' md:flex-1 flex-1 focus:outline-none p-1 cursor-pointer' defaultValue={tuNgay}  onChange={(e)=> setTuNgay(e.target.value)} name='tuNgay' type='date'   />
      </div>
 
 
      <div className='flex items-center justify-center gap-3'>
      <label className='lg:min-w-[50px] md:min-w-[10px] min-w-[60px]'>Đến</label>
-   <input className='md:flex-1  flex-1 focus:outline-none p-1 cursor-pointer'   onChange={(e)=> setDenNgay(e.target.value)} name='denNgay' type='date' />
+   <input className='md:flex-1  flex-1 focus:outline-none p-1 cursor-pointer' defaultValue={denNgay}   onChange={(e)=> setDenNgay(e.target.value)} name='denNgay' type='date' />
      </div>
 
 
