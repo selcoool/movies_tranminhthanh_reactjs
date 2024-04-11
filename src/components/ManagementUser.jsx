@@ -26,8 +26,8 @@ function ManagementUser({listUsers,setOpenMenuDeleteUser,setOpenMenuAddUser,setO
                     
                     <td className="border border-gray-950 ">
                         <div className='w-full h-full flex justify-center items-center gap-1'>
-                            <div className='bg-red-600 shadow-md shadow-slate-600 py-0.5 px-1 rounded-md hover:text-white hover:bg-red-500 hover:scale-110 cursor-pointer'  onClick={()=>setOpenMenuDeleteUser(true)}> Xóa</div>
-                            <div className='bg-blue-600 shadow-md shadow-slate-600 py-0.5 px-1 rounded-md hover:text-white hover:bg-red-500 hover:scale-110 cursor-pointer' onClick={()=>setOpenMenuEditUser(true)}> Sửa</div>
+                            <div className='bg-yellow-400 shadow-md shadow-slate-600 py-0.5 px-1 rounded-md hover:text-white hover:bg-red-500 hover:scale-110 cursor-pointer'  onClick={()=>setOpenMenuDeleteUser(true)}> Xóa</div>
+                            <div className='bg-cyan-400 shadow-md shadow-slate-600 py-0.5 px-1 rounded-md hover:text-white hover:bg-red-500 hover:scale-110 cursor-pointer' onClick={()=>setOpenMenuEditUser(true)}> Sửa</div>
                         
 
                         </div>

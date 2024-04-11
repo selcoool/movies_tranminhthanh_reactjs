@@ -166,12 +166,12 @@ function Management() {
                         </div>
                         <div className={`  h-screen w-screen overflow-auto lg:min-h-[600px] min-w-[300px]  pb-20  ${toggleStateMenu===1 ? '' :'hidden'} cursor-pointer`}>
                         <h1 className='text-4xl text-center text-cyan-500 py-4'>Quản Lý Người Dùng</h1>
-                        <div className='bg-green-500 w-1/6  mb-2 text-center shadow-md shadow-slate-600 py-0.5 px-1 rounded-md hover:text-white hover:bg-yellow-400 cursor-pointer'  onClick={()=>setOpenMenuAddUser(true)}> Thêm</div> 
+                        <div className='bg-red-500 w-1/6  mb-2 text-center shadow-md shadow-slate-600 py-0.5 px-1 rounded-md hover:text-white hover:bg-yellow-400 cursor-pointer'  onClick={()=>setOpenMenuAddUser(true)}> Thêm</div> 
                         <ManagementUser listUsers={listUsers} setOpenMenuDeleteUser={setOpenMenuDeleteUser} setOpenMenuEditUser={setOpenMenuEditUser} setOpenMenuAddUser={setOpenMenuAddUser}  />
                         </div>
                         <div className={`h-screen w-screen overflow-auto  pb-20 lg:min-h-[600px] min-w-[300px]  ${toggleStateMenu===2 ? '' :'hidden'} cursor-pointer`}>
                             <h1 className='text-4xl text-center text-cyan-500 py-4'>Quản Lý Phim</h1>
-                            <div className='bg-green-500 w-1/6 mb-2 text-center shadow-md shadow-slate-600 py-0.5 px-1 rounded-md hover:text-white hover:bg-yellow-400  cursor-pointer' onClick={()=>setOpenMenuAddMovie(true)}> Thêm</div> 
+                            <div className='bg-red-500 w-1/6 mb-2 text-center shadow-md shadow-slate-600 py-0.5 px-1 rounded-md hover:text-white hover:bg-yellow-400  cursor-pointer' onClick={()=>setOpenMenuAddMovie(true)}> Thêm</div> 
                           <ManagementMovie listMovies={listMovies}  setOpenMenuDeleteMovie={setOpenMenuDeleteMovie}  setOpenMenuEditMovie={setOpenMenuEditMovie} setOpenMenuAddMovie={setOpenMenuAddMovie}/>
                
 
