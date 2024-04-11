@@ -102,7 +102,7 @@ function ListMovie() {
 
 
      <div className='flex items-center justify-end gap-3'>
-     <div onClick={()=>[handleFind(),setIsOpenSearchMovie(!isOpenSearchMovie)]} className='lg:min-w-[50px] min-w-[50px] w-20 h-[34px] bg-slate-400 flex justify-center items-center hover:shadow-md hover:shadow-gray-300 cursor-pointer text-white hover:text-red-200 hover:scale-105 rounded-tr-xl rounded-bl-xl '>Tìm kiếm</div>
+     <div onClick={()=>[handleFind(),setIsOpenSearchMovie(!isOpenSearchMovie)]} className='lg:min-w-[50px] min-w-[50px] w-20 h-[34px] bg-slate-400 flex justify-center items-center hover:shadow-md hover:shadow-gray-300 cursor-pointer text-white  hover:scale-105 rounded-tr-xl rounded-bl-xl '>Tìm kiếm</div>
      </div>
     
 
