@@ -7,7 +7,6 @@ import ManagementPage from '../pages/ManagementPage';
 import DetailPage from '../pages/DetailPage';
 import TheaterPage from '../pages/TheaterPage';
 import ListSeats from '../components/ListSeats';
-import NightPage from '../pages/NightPage';
 
 function useRouteCustom() {
 
@@ -48,10 +47,6 @@ function useRouteCustom() {
       //     }
       // ]
       // },
-      {
-        path:"/nightmode",
-        element:<NightPage/>
-      },
       {
         path:"*",
         element:<Error/>
