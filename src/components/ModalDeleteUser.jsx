@@ -3,7 +3,7 @@ import { api_movies } from '../services/api_movies';
 
 function ModalDeleteUser({ isOpen, setIsOpen}) {
     console.log('isOpen', isOpen);
-    // console.log('maPhim', maPhim);
+    // console.log('deletMovie', deletMovie);
     
 
     const handleCloseModal = (e) => {
@@ -30,16 +30,7 @@ function ModalDeleteUser({ isOpen, setIsOpen}) {
                             <h1 className='text-center mt-6 text-2xl text-white font-bold'>Xóa Phim</h1>
                             
                            <div className='flex flex-col gap-3 pb-3 pt-5'>
-                            {/* <div className='flex items-center justify-center gap-3'>
-                                <label className='min-w-[90px] '>Tên:</label>
-                                <input type='text' className=' flex-1 focus:outline-none px-2 p-1 rounded-lg cursor-pointer' placeholder='Nhập tên người dùng' />
-                            </div>
-
-
-                            <div className='flex items-center justify-center gap-3'>
-                                <label className=' min-w-[90px]'>Mật khẩu:</label>
-                                <input type='text' className=' flex-1 focus:outline-none p-1  rounded-lg cursor-pointer' placeholder='Nhập mập khẩu' />
-                            </div> */}
+                          
 
                            <div className='flex items-center justify-center gap-3'>
                                 Bạn có thật sự muốn xóa người dùng này không ?

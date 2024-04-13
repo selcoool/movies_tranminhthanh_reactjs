@@ -1,6 +1,6 @@
 import React from 'react'
 
-function ManagementUser({listUsers,setOpenMenuDeleteUser,setOpenMenuAddUser,setOpenMenuEditUser}) {
+function ManagementUser({listUsers,setOpenMenuDeleteUser,setOpenMenuEditUser}) {
     console.log('listUsers',listUsers)
   return (
     <table className=" border border-collapse border-gray-300 w-full shadow-gray-400 shadow-md">                    

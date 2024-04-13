@@ -47,10 +47,14 @@ export const api_movies={
 
       
     },
-    deleteAMovie:()=>{
-        const Movie ={
-            MaPhim:13851
-        }
-        return http.post('/QuanLyPhim/XoaPhim?maNhom=GP04',Movie)
+    deleteAMovie:(movie)=>{
+        // console.log('oooooooooo',`/QuanLyPhim/XoaPhim?MaPhim=${Movie}`)
+        // const maPhim={MaPhim:Movie}
+        return http.delete(`/QuanLyPhim/XoaPhim?MaPhim=${movie}`)
+    },
+    editAMovie:(movie)=>{
+        // console.log('oooooooooo',`/QuanLyPhim/XoaPhim?MaPhim=${Movie}`)
+        // const maPhim={MaPhim:Movie}
+        return http.delete(`/QuanLyPhim/CapNhatPhimUpload`,movie)
     }
 }

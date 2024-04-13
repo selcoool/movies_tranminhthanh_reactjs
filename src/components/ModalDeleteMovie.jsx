@@ -1,10 +1,8 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { api_movies } from '../services/api_movies';
 
-function ModalDeleteMovie({ isOpen, setIsOpen}) {
-    console.log('isOpen', isOpen);
-    // console.log('maPhim', maPhim);
-    
+function ModalDeleteMovie({ isOpen, setIsOpen,deletMovie,setListMovies}) {
+    const [status,setStatus]=useState(false)
 
     const handleCloseModal = (e) => {
         if (e.target.id === "wrapper") {
@@ -12,18 +10,36 @@ function ModalDeleteMovie({ isOpen, setIsOpen}) {
         }
     }
 
-    const handleDeleteMovie=()=>{
-        api_movies.deleteAMovie()
-        .then((data) => {
-  
-         console.log('data',data);
-        })
-        .catch((err) => {
-          console.log('error', err);
-        });
-        
+   
 
-    }
+
+    function handleDeleteMovie(){
+        api_movies.deleteAMovie(deletMovie)
+      .then((data) => {
+        setStatus(!status)
+    //    console.log('datasssss',data);
+      })
+      .catch((err) => {
+        console.log('error', err);
+      });
+}
+
+
+
+
+useEffect(() => {
+    api_movies.getAllMoviesManagement()
+      .then((data) => {
+      
+        setListMovies(data.data.content);
+
+        // console.log('data.data.content', data.data.content);
+      })
+      .catch((err) => {
+        console.log('error', err);
+      });
+  }, [status]);
+
 
 
 
@@ -43,16 +59,7 @@ function ModalDeleteMovie({ isOpen, setIsOpen}) {
                             <h1 className='text-center mt-6 text-2xl text-white font-bold'>Xóa Phim</h1>
                             
                            <div className='flex flex-col gap-3 pb-3 pt-5'>
-                            {/* <div className='flex items-center justify-center gap-3'>
-                                <label className='min-w-[90px] '>Tên:</label>
-                                <input type='text' className=' flex-1 focus:outline-none px-2 p-1 rounded-lg cursor-pointer' placeholder='Nhập tên người dùng' />
-                            </div>
-
-
-                            <div className='flex items-center justify-center gap-3'>
-                                <label className=' min-w-[90px]'>Mật khẩu:</label>
-                                <input type='text' className=' flex-1 focus:outline-none p-1  rounded-lg cursor-pointer' placeholder='Nhập mập khẩu' />
-                            </div> */}
+                          
 
                            <div className='flex items-center justify-center gap-3'>
                                 Bạn có thật sự muốn xóa phim này không ?
@@ -60,7 +67,7 @@ function ModalDeleteMovie({ isOpen, setIsOpen}) {
 
 
                             <div className='flex items-center justify-end gap-3'>
-                                <div className=' min-w-[90px] w-30 h-[34px] bg-green-500 flex justify-center rounded-md items-center hover:shadow-md hover:shadow-gray-300 cursor-pointer hover:text-white hover:scale-105 ' onClick={()=>handleDeleteMovie()}>Xóa</div>
+                                <div className=' min-w-[90px] w-30 h-[34px] bg-green-500 flex justify-center rounded-md items-center hover:shadow-md hover:shadow-gray-300 cursor-pointer hover:text-white hover:scale-105 ' onClick={()=>[handleDeleteMovie(),setIsOpen(false)]}>Xóa</div>
                             </div>
 
 

@@ -5,13 +5,29 @@ import { useFormik } from 'formik';
 import * as yup from "yup"
 
 
-function ModalEditMovie({ isOpen, setIsOpen}) {
+function ModalEditMovie({ isOpen, setIsOpen,editMovie}) {
     console.log('isOpen', isOpen);
-    // console.log('maPhim', maPhim);
+    console.log('meditMovie', editMovie);
     const [getFile, setGetFile] = useState()
     const [date, setDate] = useState('2024-10-10')
 
-   
+
+//     const[editedData,setEditedData]=useState({
+//         biDanh: editMovie?.biDanh,
+//         dangChieu: editMovie?.dangChieu ,
+//         danhGia: editMovie?.danhGia,
+//         hinhAnh: editMovie?.hinhAnh,
+//         hot: editMovie?.hot,
+//         maNhom: editMovie?.maNhom,
+//         maPhim: editMovie?.maPhim,
+//         moTa: editMovie?.moTa,
+//         ngayKhoiChieu: editMovie?.ngayKhoiChieu,
+//         sapChieu: editMovie?.sapChieu,
+//         tenPhim:editMovie?.tenPhim,
+//         trailer: editMovie?.trailer,
+//  })
+
+//  console.log('ddddđ',editedData)
 
     // const formData = new FormData();
     // formData.append('file', getFile);
@@ -40,8 +56,8 @@ function ModalEditMovie({ isOpen, setIsOpen}) {
     //       });
     //   }, []);
 
-    function handleCreateAMovie(Movie){
-            api_movies.createAMovie(Movie)
+    function handleEditAMovie(Movie){
+            api_movies.editAMovie(Movie)
           .then((data) => {
     
            console.log('data',data);
@@ -101,7 +117,7 @@ function ModalEditMovie({ isOpen, setIsOpen}) {
                 
               }
               console.log('formData',formData)
-                 const res=await api_movies.createAMovie(formData)
+                 const res=await api_movies.editAMovie(formData)
 
             
             
@@ -150,7 +166,7 @@ function ModalEditMovie({ isOpen, setIsOpen}) {
                         
                             <div className='flex items-center justify-center gap-3'>
                                 <label >Tên phim:</label>
-                                <input onChange={handleChange} onBlur={handleBlur} id='tenPhim'value={values.tenPhim} type='text'  className=' flex-1  focus:outline-none px-2 p-1 rounded-lg cursor-pointer' placeholder='Nhập tên phim' />
+                                <input onChange={handleChange} onBlur={handleBlur} id='tenPhim' value={values.tenPhim} type='text'  className=' flex-1  focus:outline-none px-2 p-1 rounded-lg cursor-pointer' placeholder='Nhập tên phim' />
                             </div>
                             <div>{errors.tenPhim && touched.tenPhim ? (<div className='text-white '>{errors.tenPhim}</div>) : ''}</div>
                        
@@ -281,7 +297,7 @@ function ModalEditMovie({ isOpen, setIsOpen}) {
 
 
                             <div className='flex items-center justify-end  gap-3'>
-                                <button type="submit" className=' min-w-[90px] w-30 h-[34px] bg-green-500 flex justify-center rounded-md items-center hover:shadow-md hover:shadow-gray-300 cursor-pointer hover:text-white  '>Thêm</button>
+                                <button type="submit" className=' min-w-[90px] w-30 h-[34px] bg-green-500 flex justify-center rounded-md items-center hover:shadow-md hover:shadow-gray-300 cursor-pointer hover:text-white  '>Cập nhật</button>
                             </div>
 
 

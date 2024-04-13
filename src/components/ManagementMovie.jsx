@@ -2,7 +2,11 @@ import React from 'react';
 import moment from 'moment';
 import 'moment/locale/vi';
 
-function ManagementMovie({ listMovies,setOpenMenuAddMovie,setOpenMenuEditMovie,setOpenMenuDeleteMovie}) {
+function ManagementMovie({ listMovies,setOpenMenuEditMovie,setOpenMenuDeleteMovie,setDeletMovie,setEditMovie}) {
+
+
+
+    
     console.log('listMovies', listMovies);
     return (
       
@@ -34,8 +38,8 @@ function ManagementMovie({ listMovies,setOpenMenuAddMovie,setOpenMenuEditMovie,s
                                         </td>
                                         <td className="border border-gray-950 ">
                                             <div className='w-full h-full flex justify-center items-center gap-1'>
-                                                <div className='bg-yellow-400 shadow-md shadow-slate-600 py-0.5 px-1 rounded-md hover:text-white hover:bg-red-500 hover:scale-110 cursor-pointer' onClick={()=>setOpenMenuDeleteMovie(true)}> Xóa</div> 
-                                                <div className='bg-cyan-400 shadow-md shadow-slate-600 py-0.5 px-1 rounded-md hover:text-white hover:bg-red-500 hover:scale-110 cursor-pointer' onClick={()=>setOpenMenuEditMovie(true)}> Sửa</div>
+                                                <div className='bg-yellow-400 shadow-md shadow-slate-600 py-0.5 px-1 rounded-md hover:text-white hover:bg-red-500 hover:scale-110 cursor-pointer' onClick={()=>[setOpenMenuDeleteMovie(true),setDeletMovie(listMovie.maPhim)]}> Xóa</div> 
+                                                <div className='bg-cyan-400 shadow-md shadow-slate-600 py-0.5 px-1 rounded-md hover:text-white hover:bg-red-500 hover:scale-110 cursor-pointer' onClick={()=>[setOpenMenuEditMovie(true),setEditMovie(listMovie)]}> Sửa</div>
                                             </div>
                                         </td>
                                     </tr>

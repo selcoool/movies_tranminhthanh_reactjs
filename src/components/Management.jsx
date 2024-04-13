@@ -37,6 +37,10 @@ function Management() {
  const [openMenuAddMovie,setOpenMenuAddMovie]=useState(false)
  const [openMenuEditMovie,setOpenMenuEditMovie]=useState(false)
  const [openMenuDeletMovie,setOpenMenuDeleteMovie]=useState(false)
+ const [deletMovie,setDeletMovie]=useState()
+ const [editMovie,setEditMovie]=useState()
+
+ console.log('editMovieXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',editMovie)
 
  const [openMenuAddUser,setOpenMenuAddUser]=useState(false)
  const [openMenuEditUser,setOpenMenuEditUser]=useState(false)
@@ -64,7 +68,7 @@ function Management() {
       
         setListMovies(data.data.content);
 
-        console.log('data.data.content', data.data.content);
+        // console.log('data.data.content', data.data.content);
       })
       .catch((err) => {
         console.log('error', err);
@@ -167,12 +171,12 @@ function Management() {
                         <div className={`  h-screen w-screen overflow-auto lg:min-h-[600px] min-w-[300px]  pb-20  ${toggleStateMenu===1 ? '' :'hidden'} cursor-pointer`}>
                         <h1 className='text-4xl text-center text-cyan-500 py-4'>Quản Lý Người Dùng</h1>
                         <div className='bg-red-500 w-1/6  mb-2 text-center shadow-md shadow-slate-600 py-0.5 px-1 rounded-md hover:text-white hover:bg-yellow-400 cursor-pointer'  onClick={()=>setOpenMenuAddUser(true)}> Thêm</div> 
-                        <ManagementUser listUsers={listUsers} setOpenMenuDeleteUser={setOpenMenuDeleteUser} setOpenMenuEditUser={setOpenMenuEditUser} setOpenMenuAddUser={setOpenMenuAddUser}  />
+                        <ManagementUser listUsers={listUsers} setOpenMenuDeleteUser={setOpenMenuDeleteUser} setOpenMenuEditUser={setOpenMenuEditUser}  />
                         </div>
                         <div className={`h-screen w-screen overflow-auto  pb-20 lg:min-h-[600px] min-w-[300px]  ${toggleStateMenu===2 ? '' :'hidden'} cursor-pointer`}>
                             <h1 className='text-4xl text-center text-cyan-500 py-4'>Quản Lý Phim</h1>
                             <div className='bg-red-500 w-1/6 mb-2 text-center shadow-md shadow-slate-600 py-0.5 px-1 rounded-md hover:text-white hover:bg-yellow-400  cursor-pointer' onClick={()=>setOpenMenuAddMovie(true)}> Thêm</div> 
-                          <ManagementMovie listMovies={listMovies}  setOpenMenuDeleteMovie={setOpenMenuDeleteMovie}  setOpenMenuEditMovie={setOpenMenuEditMovie} setOpenMenuAddMovie={setOpenMenuAddMovie}/>
+                          <ManagementMovie listMovies={listMovies} setEditMovie={setEditMovie}  setDeletMovie={setDeletMovie}  setOpenMenuDeleteMovie={setOpenMenuDeleteMovie}  setOpenMenuEditMovie={setOpenMenuEditMovie} />
                
 
                         </div>
@@ -187,12 +191,12 @@ function Management() {
     <ModalSignIn  isOpen={openMenuSignIn} setIsOpen={setOpenMenuSignIn} setOpenMenuSignUp={setOpenMenuSignUp} />
 
     <ModalAddMovie  isOpen={openMenuAddMovie} setIsOpen={setOpenMenuAddMovie} />
-    <ModalEditMovie  isOpen={openMenuEditMovie} setIsOpen={setOpenMenuEditMovie} />
-    <ModalDeleteMovie  isOpen={openMenuDeletMovie} setIsOpen={setOpenMenuDeleteMovie} />
+    <ModalEditMovie editMovie={editMovie} isOpen={openMenuEditMovie} setIsOpen={setOpenMenuEditMovie} />
+    <ModalDeleteMovie  setListMovies={setListMovies}  deletMovie={deletMovie} isOpen={openMenuDeletMovie} setIsOpen={setOpenMenuDeleteMovie} />
 
     <ModalAddUser  isOpen={openMenuAddUser} setIsOpen={setOpenMenuAddUser} />
     <ModalEditUser  isOpen={openMenuEditUser} setIsOpen={setOpenMenuEditUser} />
-    <ModalDeleteUser  isOpen={openMenuDeletUser} setIsOpen={setOpenMenuDeleteUser} />
+    <ModalDeleteUser   isOpen={openMenuDeletUser} setIsOpen={setOpenMenuDeleteUser} />
     
 
     <div  onClick={() => {setDarkMode(!darkMode)}} className={`fixed h-8 w-8  z-10  flex items-center justify-center text-white text-[14px] shadow-sm shadow-slate-500 cursor-pointer ${darkMode ? 'bg-yellow-500' :'bg-red-400'} rounded-full top-6 right-2`}> {darkMode ? <FaMoon /> : <MdSunny />}</div>
