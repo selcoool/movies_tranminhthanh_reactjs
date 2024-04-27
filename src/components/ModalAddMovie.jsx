@@ -6,7 +6,7 @@ import * as yup from "yup"
 
 
 function ModalAddMovie({ isOpen, setIsOpen}) {
-    console.log('isOpen', isOpen);
+    // console.log('isOpen', isOpen);
     // console.log('maPhim', maPhim);
     const [getFile, setGetFile] = useState()
     const [date, setDate] = useState('10/10/2020')
@@ -44,7 +44,7 @@ function ModalAddMovie({ isOpen, setIsOpen}) {
             api_movies.createAMovie(Movie)
           .then((data) => {
     
-           console.log('data',data);
+        //    console.log('data',data);
           })
           .catch((err) => {
             console.log('error', err);
@@ -79,7 +79,7 @@ function ModalAddMovie({ isOpen, setIsOpen}) {
         onSubmit: async(values) => {
           try {
 
-            console.log('valuexxxxxxxxxxxxxxxxxxxxx', values);
+            // console.log('valuexxxxxxxxxxxxxxxxxxxxx', values);
             //   handleCreateAMovie(value)
             //   console.log('typeof', typeof value.file);
             //   console.log('action', action);
@@ -96,11 +96,11 @@ function ModalAddMovie({ isOpen, setIsOpen}) {
             //   }
             let formData = new FormData();
               for (let key in values){
-                console.log('values[key]',values[key])
+                // console.log('values[key]',values[key])
                     formData.append(key,values[key]);
                 
               }
-              console.log('formData',formData)
+            //   console.log('formData',formData)
                  const res=await api_movies.createAMovie(formData)
 
             

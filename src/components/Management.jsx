@@ -31,7 +31,7 @@ function Management() {
  const [darkMode, setDarkMode] = useState();
  const [scrollPosition, setScrollPosition] = useState(0);
  const [toggleIconUp, setToggleIconUp] = useState(false);
- console.log('xxxxxxx',darkMode)
+//  console.log('xxxxxxx',darkMode)
 
 
  const [openMenuAddMovie,setOpenMenuAddMovie]=useState(false)
@@ -40,13 +40,13 @@ function Management() {
  const [deletMovie,setDeletMovie]=useState()
  const [editMovie,setEditMovie]=useState()
 
- console.log('editMovieXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',editMovie)
+//  console.log('editMovieXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',editMovie)
 
  const [openMenuAddUser,setOpenMenuAddUser]=useState(false)
  const [openMenuEditUser,setOpenMenuEditUser]=useState(false)
  const [openMenuDeletUser,setOpenMenuDeleteUser]=useState(false)
 
- console.log('openMenuAddMovie',openMenuAddMovie)
+//  console.log('openMenuAddMovie',openMenuAddMovie)
 
 
   const Links=[
@@ -82,7 +82,7 @@ function Management() {
       
         setListUsers(data.data.content);
 
-        console.log('data.data.content USER', data.data.content);
+        // console.log('data.data.content USER', data.data.content);
       })
       .catch((err) => {
         console.log('error', err);

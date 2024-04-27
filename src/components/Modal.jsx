@@ -3,7 +3,7 @@ import { api_movies } from '../services/api_movies';
 
 function Modal({ isOpen, setIsOpen,maPhim }) {
     // console.log('isOpen', isOpen);
-    console.log('maPhim', maPhim);
+    // console.log('maPhim', maPhim);
     
     const handleCloseModal =(e)=>{
         if(e.target.id==="wrapper")

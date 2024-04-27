@@ -16,7 +16,7 @@ function Header() {
   const location = useLocation();
   const { pathname } = location;
 
-  console.log('dasdas',pathname)
+  // console.log('dasdas',pathname)
 
  const [openMenuNavbar,setOpenMenuNavbar]=useState(false)
 
@@ -28,7 +28,7 @@ function Header() {
  const [darkMode, setDarkMode] = useState(false);
  const [scrollPosition, setScrollPosition] = useState(0);
  const [toggleIconUp, setToggleIconUp] = useState(false);
- console.log('xxxxxxx',toggleIconUp)
+//  console.log('xxxxxxx',toggleIconUp)
 
 
  const handleCloseMenuNavbar =(e)=>{

@@ -7,7 +7,7 @@ function GoogleMap() {
     const [marker, setMarker] = useState(null);
     const [infoWindow, setInfoWindow] = useState(null);
   
-    console.log('infoWindow',infoWindow)
+    // console.log('infoWindow',infoWindow)
   
     useEffect(() => {
       const loader = new Loader({

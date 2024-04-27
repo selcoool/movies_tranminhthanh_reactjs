@@ -44,7 +44,7 @@ function ModalEditUser({ isOpen, setIsOpen}) {
             api_movies.createAMovie(Movie)
           .then((data) => {
     
-           console.log('data',data);
+        //    console.log('data',data);
           })
           .catch((err) => {
             console.log('error', err);
@@ -75,7 +75,7 @@ function ModalEditUser({ isOpen, setIsOpen}) {
         onSubmit: async(values) => {
           try {
 
-            console.log('valuexxxxxxxxxxxxxxxxxxxxx', values);
+            // console.log('valuexxxxxxxxxxxxxxxxxxxxx', values);
             //   handleCreateAMovie(value)
             //   console.log('typeof', typeof value.file);
             //   console.log('action', action);
@@ -92,11 +92,11 @@ function ModalEditUser({ isOpen, setIsOpen}) {
             //   }
             let formData = new FormData();
               for (let key in values){
-                console.log('values[key]',values[key])
+                // console.log('values[key]',values[key])
                     formData.append(key,values[key]);
                 
               }
-              console.log('formData',formData)
+            //   console.log('formData',formData)
                  const res=await api_movies.createAMovie(formData)
 
             
@@ -292,7 +292,7 @@ function ModalEditUser({ isOpen, setIsOpen}) {
 
 
                             <div className='flex items-center justify-end  gap-3'>
-                                <button type="submit" className=' min-w-[90px] w-30 h-[34px] bg-green-500 flex justify-center rounded-md items-center hover:shadow-md hover:shadow-gray-300 cursor-pointer hover:text-white  '>Thêm</button>
+                                <button type="submit" className=' min-w-[90px] w-30 h-[34px] bg-green-500 flex justify-center rounded-md items-center hover:shadow-md hover:shadow-gray-300 cursor-pointer hover:text-white  '>Cập nhật</button>
                             </div>
 
 

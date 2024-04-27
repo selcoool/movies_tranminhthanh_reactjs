@@ -16,7 +16,7 @@ function ListSeats() {
 
     const [openMenuSignIn,setOpenMenuSignIn]=useState(false)
   
-    console.log('openMenuSignIn', openMenuSignIn)
+    // console.log('openMenuSignIn', openMenuSignIn)
     // console.log('thongTinPhim', thongTinPhim)
     // console.log('bookTickets', bookTickets)
 
@@ -132,7 +132,7 @@ function ListSeats() {
             </div>
 
 
-            <ModalSignIn  isOpen={openMenuSignIn} setIsOpen={setOpenMenuSignIn}  />
+            {/* <ModalSignIn  isOpen={openMenuSignIn} setIsOpen={setOpenMenuSignIn}  /> */}
 
 
           

@@ -8,12 +8,12 @@ import Modal from './Modal';
 import ModalMovie from './ModalMovie';
 
 function DetailMovie({tenPhim}) {
-    console.log('pppp',tenPhim)
+    // console.log('pppp',tenPhim)
 
     const [toggleStateInfor, setToggleStateInfor] = useState(0);
     const [detailMovie,setDetailMovie]=useState()
     const [isOpen, setIsOpen] = useState(false);
-    console.log('detailMovie',detailMovie)
+    // console.log('detailMovie',detailMovie)
 
 
      const stars=[
@@ -51,7 +51,7 @@ function DetailMovie({tenPhim}) {
     useEffect(() => {
         api_movies.getAMovie(tenPhim)
           .then((data) => {
-            console.log('ppppxxxx',data.data.content)
+            // console.log('ppppxxxx',data.data.content)
             setDetailMovie(data.data.content)
           
           })

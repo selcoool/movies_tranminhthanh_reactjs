@@ -6,32 +6,20 @@ import * as yup from "yup"
 
 
 function ModalEditMovie({ isOpen, setIsOpen,editMovie}) {
-    console.log('isOpen', isOpen);
+    // console.log('isOpen', isOpen);
     console.log('meditMovie', editMovie);
     const [getFile, setGetFile] = useState()
     const [date, setDate] = useState('2024-10-10')
+  
 
 
-//     const[editedData,setEditedData]=useState({
-//         biDanh: editMovie?.biDanh,
-//         dangChieu: editMovie?.dangChieu ,
-//         danhGia: editMovie?.danhGia,
-//         hinhAnh: editMovie?.hinhAnh,
-//         hot: editMovie?.hot,
-//         maNhom: editMovie?.maNhom,
-//         maPhim: editMovie?.maPhim,
-//         moTa: editMovie?.moTa,
-//         ngayKhoiChieu: editMovie?.ngayKhoiChieu,
-//         sapChieu: editMovie?.sapChieu,
-//         tenPhim:editMovie?.tenPhim,
-//         trailer: editMovie?.trailer,
-//  })
+  
 
-//  console.log('ddddđ',editedData)
+//  console.log('ddddđzzzzzzzzzzzzzzzzzzzzzzzzzzzz',editedData)
 
     // const formData = new FormData();
     // formData.append('file', getFile);
-    console.log('jjjjjjjjjjjj date',date)
+    // console.log('jjjjjjjjjjjj date',date)
 
     const handleCloseModal = (e) => {
         if (e.target.id === "wrapper") {
@@ -40,27 +28,43 @@ function ModalEditMovie({ isOpen, setIsOpen,editMovie}) {
     }
 
 
-    // useEffect(() => {
-    //     api_movies.getAllMovies()
-    //       .then((data) => {
-    //         // setSlides(data.data.content);
-    //         // console.log('data.data m', data.data.content.items);
-    //        const currentFilm =data.data.content.items.filter((movies)=>{
-    //          return movies.maPhim==maPhim;
-    //        })
+    const [editedData, setEditedData] = useState({
+        tenPhim: "",
+        trailer: "",
+        moTa: "",
+        ngayKhoiChieu: "",
+        sapChieu: true,
+        dangChieu: false,
+        hot: true,
+        danhGia: 0,
+        maNhom: "GP04",
+        File: '',
+      });
+    
+      useEffect(() => {
+        if (editMovie) {
+            setEditedData({
+            tenPhim: editMovie.tenPhim || "",
+            trailer: editMovie.trailer || "",
+            moTa: editMovie.moTa || "",
+            ngayKhoiChieu: editMovie.ngayKhoiChieu || "",
+            sapChieu: editMovie.sapChieu || true,
+            dangChieu: editMovie.dangChieu || false,
+            hot: editMovie.hot || true,
+            danhGia: editMovie.danhGia || 0,
+            maNhom: editMovie.maNhom || "GP04",
+            File: '',
+          });
+        }
+      }, [editMovie]);
 
-    //        console.log('currentFilm',currentFilm);
-    //       })
-    //       .catch((err) => {
-    //         console.log('error', err);
-    //       });
-    //   }, []);
+      // console.log('kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk',editedData)
 
     function handleEditAMovie(Movie){
             api_movies.editAMovie(Movie)
           .then((data) => {
     
-           console.log('data',data);
+          //  console.log('data',data);
           })
           .catch((err) => {
             console.log('error', err);
@@ -68,8 +72,9 @@ function ModalEditMovie({ isOpen, setIsOpen,editMovie}) {
     }
 
     const { handleChange, handleSubmit, handleBlur, resetForm, values, errors, touched,setFieldValue } = useFormik({
+      enableReinitialize:true,
         initialValues: {
-          tenPhim: "",
+          tenPhim: editedData.tenPhim,
           trailer:"",
           moTa:"",
           ngayKhoiChieu:"",
@@ -95,7 +100,7 @@ function ModalEditMovie({ isOpen, setIsOpen,editMovie}) {
         onSubmit: async(values) => {
           try {
 
-            console.log('valuexxxxxxxxxxxxxxxxxxxxx', values);
+            // console.log('valuexxxxxxxxxxxxxxxxxxxxx', values);
             //   handleCreateAMovie(value)
             //   console.log('typeof', typeof value.file);
             //   console.log('action', action);
@@ -112,11 +117,11 @@ function ModalEditMovie({ isOpen, setIsOpen,editMovie}) {
             //   }
             let formData = new FormData();
               for (let key in values){
-                console.log('values[key]',values[key])
+                // console.log('values[key]',values[key])
                     formData.append(key,values[key]);
                 
               }
-              console.log('formData',formData)
+              // console.log('formData',formData)
                  const res=await api_movies.editAMovie(formData)
 
             
@@ -166,7 +171,7 @@ function ModalEditMovie({ isOpen, setIsOpen,editMovie}) {
                         
                             <div className='flex items-center justify-center gap-3'>
                                 <label >Tên phim:</label>
-                                <input onChange={handleChange} onBlur={handleBlur} id='tenPhim' value={values.tenPhim} type='text'  className=' flex-1  focus:outline-none px-2 p-1 rounded-lg cursor-pointer' placeholder='Nhập tên phim' />
+                                <input onChange={handleChange} onBlur={handleBlur} id='tenPhim' defaultValue={values.tenPhim} type='text'  className=' flex-1  focus:outline-none px-2 p-1 rounded-lg cursor-pointer' placeholder='Nhập tên phim' />
                             </div>
                             <div>{errors.tenPhim && touched.tenPhim ? (<div className='text-white '>{errors.tenPhim}</div>) : ''}</div>
                        
@@ -174,7 +179,7 @@ function ModalEditMovie({ isOpen, setIsOpen,editMovie}) {
 
                             <div className='flex items-center justify-center gap-3'>
                                 <label>Trailer:</label>
-                                <input onChange={handleChange} onBlur={handleBlur} id='trailer'value={values.trailer} type='text' className=' flex-1 focus:outline-none px-2 p-1 rounded-lg cursor-pointer' placeholder='Nhập trailer' />
+                                <input onChange={handleChange} onBlur={handleBlur} id='trailer'   value={values.trailer} type='text' className=' flex-1 focus:outline-none px-2 p-1 rounded-lg cursor-pointer' placeholder='Nhập trailer' />
                             </div>
                             {errors.trailer && touched.trailer ? (<div className='text-white'>{errors.trailer}</div>) : ''}
 

@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { api_movies } from '../services/api_movies';
 
 function ModalDeleteUser({ isOpen, setIsOpen}) {
-    console.log('isOpen', isOpen);
+    // console.log('isOpen', isOpen);
     // console.log('deletMovie', deletMovie);
     
 

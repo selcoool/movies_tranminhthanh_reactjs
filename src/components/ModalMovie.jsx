@@ -30,7 +30,7 @@ function ModalMovie({ isOpen, setIsOpen,tenPhim }) {
           //   //  return movies.tenPhim===tenPhim
           //   console.log('data.data m', data.data.content);
           //  })
-           console.log('data.data m', data.data.content[0].trailer);
+        //    console.log('data.data m', data.data.content[0].trailer);
         // setTrailerMovie(currentFilm)
           //  console.log('currentFilm',currentFilm);
           //  console.log('video',currentFilm[0].trailer);

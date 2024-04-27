@@ -7,7 +7,7 @@ function ManagementMovie({ listMovies,setOpenMenuEditMovie,setOpenMenuDeleteMovi
 
 
     
-    console.log('listMovies', listMovies);
+    // console.log('listMovies', listMovies);
     return (
       
                     <table className="border border-collapse border-gray-300 w-full shadow-gray-400 shadow-md  ">                    

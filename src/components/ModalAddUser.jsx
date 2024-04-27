@@ -45,7 +45,7 @@ function ModalAddUser({ isOpen, setIsOpen}) {
             api_movies.createAMovie(Movie)
           .then((data) => {
     
-           console.log('data',data);
+        //    console.log('data',data);
           })
           .catch((err) => {
             console.log('error', err);
@@ -76,7 +76,7 @@ function ModalAddUser({ isOpen, setIsOpen}) {
         onSubmit: async(values) => {
           try {
 
-            console.log('valuexxxxxxxxxxxxxxxxxxxxx', values);
+            // console.log('valuexxxxxxxxxxxxxxxxxxxxx', values);
             //   handleCreateAMovie(value)
             //   console.log('typeof', typeof value.file);
             //   console.log('action', action);
@@ -93,11 +93,11 @@ function ModalAddUser({ isOpen, setIsOpen}) {
             //   }
             let formData = new FormData();
               for (let key in values){
-                console.log('values[key]',values[key])
+                // console.log('values[key]',values[key])
                     formData.append(key,values[key]);
                 
               }
-              console.log('formData',formData)
+            //   console.log('formData',formData)
                  const res=await api_users.createAUser(formData)
 
             

@@ -25,7 +25,7 @@ function ListMovie() {
   const [curentPage, setCurrentPage] = useState(1);
   const [moviePerPage, setMoviePerPage] = useState(8);
 
- console.log('tenPhim',tenPhim)
+//  console.log('tenPhim',tenPhim)
 
 
  
